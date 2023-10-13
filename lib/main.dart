@@ -5,8 +5,6 @@ void main() {
   runApp(const MyApp());
 }
 
-//test commit
-// ahmed bullshit
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
