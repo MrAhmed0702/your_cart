@@ -22,7 +22,7 @@ class _OTP_PageState extends State<OTP_Page> {
           ),
           Container(
             child: Image.asset(
-              'images/welcome.png',
+              'images/login_png.png',
             ),
           ),
           Expanded(
@@ -30,8 +30,8 @@ class _OTP_PageState extends State<OTP_Page> {
               decoration: BoxDecoration(
                 color: Color(0xFF5125D2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(22),
+                  topRight: Radius.circular(22),
                 ),
               ),
               child: Padding(
