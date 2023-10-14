@@ -22,7 +22,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           Container(
             child: Image.asset(
-              'images/welcome.png',
+              'images/forgot_png.png',
             ),
           ),
           Expanded(
@@ -30,8 +30,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               decoration: BoxDecoration(
                 color: Color(0xFF5125D2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(22),
+                  topRight: Radius.circular(22),
                 ),
               ),
               child: Padding(

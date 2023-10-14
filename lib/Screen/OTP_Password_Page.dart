@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/UpdatePassword.dart';
 
@@ -22,7 +23,7 @@ class _OTP_PageState extends State<OTP_Page> {
           ),
           Container(
             child: Image.asset(
-              'images/welcome.png',
+              'images/login_png.png',
             ),
           ),
           Expanded(
@@ -30,8 +31,8 @@ class _OTP_PageState extends State<OTP_Page> {
               decoration: BoxDecoration(
                 color: Color(0xFF5125D2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(22),
+                  topRight: Radius.circular(22),
                 ),
               ),
               child: Padding(
@@ -65,20 +66,168 @@ class _OTP_PageState extends State<OTP_Page> {
                     SizedBox(
                       height: 10,
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Email",
-                        hintStyle: TextStyle(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 44,
+                          width: 44,
+                          decoration: ShapeDecoration(
                             color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 2, color: Colors.white),
+                            borderRadius: BorderRadius.circular(14),
+                            ),
                           ),
-                        ),
-                      ),
+                            child: TextField(
+                              onChanged: (value){
+                                if (value.length == 1)
+                                {
+                                  FocusScope.of(context).nextFocus();
+                                }
+                              },
+                              style: TextStyle(
+                              fontFamily: "Poppins2",
+                              fontSize: 30,
+                              color: Color(0xFF5125D2),
+                            ),
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            inputFormatters: [
+                              LengthLimitingTextInputFormatter(1),
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                          ),
+                          ),
+                        SizedBox(width: 18,),
+                        Container(
+                          height: 44,
+                          width: 44,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 2, color: Colors.white),
+                            borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                            child: TextField(
+                              onChanged: (value){
+                                if (value.length == 1)
+                                {
+                                  FocusScope.of(context).nextFocus();
+                                }
+                              },
+                              style: TextStyle(
+                              fontFamily: "Poppins2",
+                              fontSize: 30,
+                              color: Color(0xFF5125D2),
+                            ),
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            inputFormatters: [
+                              LengthLimitingTextInputFormatter(1),
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                          ),
+                          ),
+                        SizedBox(width: 18,),
+                        Container(
+                          height: 44,
+                          width: 44,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 2, color: Colors.white),
+                            borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                            child: TextField(
+                              onChanged: (value){
+                                if (value.length == 1)
+                                {
+                                  FocusScope.of(context).nextFocus();
+                                }
+                              },
+                              style: TextStyle(
+                              fontFamily: "Poppins2",
+                              fontSize: 30,
+                              color: Color(0xFF5125D2),
+                            ),
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            inputFormatters: [
+                              LengthLimitingTextInputFormatter(1),
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                          ),
+                          ),
+                        SizedBox(width: 18,),
+                        Container(
+                          height: 44,
+                          width: 44,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 2, color: Colors.white),
+                            borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                            child: TextField(
+                              onChanged: (value){
+                                if (value.length == 1)
+                                {
+                                  FocusScope.of(context).nextFocus();
+                                }
+                              },
+                              style: TextStyle(
+                              fontFamily: "Poppins2",
+                              fontSize: 30,
+                              color: Color(0xFF5125D2),
+                            ),
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            inputFormatters: [
+                              LengthLimitingTextInputFormatter(1),
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                          ),
+                          ),
+                        SizedBox(width: 18,),
+                        Container(
+                          height: 44,
+                          width: 44,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 2, color: Colors.white),
+                            borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                            child: TextField(
+                              onChanged: (value){
+                                if (value.length == 1)
+                                {
+                                  FocusScope.of(context).nextFocus();
+                                }
+                              },
+                              
+                              style: TextStyle(
+                              fontFamily: "Poppins2",
+                              fontSize: 30,
+                              color: Color(0xFF5125D2),
+                            ),
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            inputFormatters: [
+                              LengthLimitingTextInputFormatter(1),
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                          ),
+                          ),
+                        
+                      ],
                     ),
+                    
                     SizedBox(
                       height: 40,
                     ),
