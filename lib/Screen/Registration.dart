@@ -16,23 +16,24 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Container(
-            child: Image.asset(
-              'images/welcome.png',
+      
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
             ),
-          ),
-          Expanded(
-            child: Container(
+            Container(
+              child: Image.asset(
+                'images/welcome.png',
+              ),
+            ),
+            Container(
               decoration: BoxDecoration(
                 color: Color(0xFF5125D2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(22),
+                  topRight: Radius.circular(22),
                 ),
               ),
               child: Padding(
@@ -66,19 +67,48 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     SizedBox(
                       height: 10,
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "First Name",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
+                    Row(
+                      children: [
+                        SizedBox(
+                        width: 125,
+                        height: 43.47,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: "First Name",
+                            hintStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Poppins2'),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        ),
+                        SizedBox(
+                          width:41,
+                          ),
+                        SizedBox(
+                        width: 125,
+                        height: 43.47,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: "Last Name",
+                            hintStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Poppins2'),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 10,
@@ -191,8 +221,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
