@@ -8,7 +8,7 @@ class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder<User?>(stream:FirebaseAuth ),
+      // body: StreamBuilder<User?>(stream:FirebaseAuth ),
     );
   }
 }
