@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "welcome",
       routes: {
-        "welcome": (context) => Welcome(),
-        "login": (context) => LoginPage(),
-        "registration" : (context) => RegistrationPage(),
-        "homepage" : (context) => HomePage(),
-        "forgotpassword" : (context) => ForgotPasswordPage(),
-        "OTP" :(context) => OTP_Page(),
-        "updatepassword" :(context) => UpdatePasswordPage(),
+        "welcome": (context) => const Welcome(),
+        "login": (context) => const LoginPage(),
+        "registration" : (context) => const RegistrationPage(),
+        "homepage" : (context) => const HomePage(),
+        "forgotpassword" : (context) => const ForgotPasswordPage(),
+        "OTP" :(context) => const OTP_Page(),
+        "updatepassword" :(context) => const UpdatePasswordPage(),
         
       },
     );
