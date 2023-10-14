@@ -27,20 +27,20 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Container(
-            padding: EdgeInsets.all(12),
-            height: 300,
-            child: Image.asset(
-              'images/login_png.png',
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
             ),
-          ),
-          Expanded(
-            child: Container(
+            Container(
+              padding: EdgeInsets.all(12),
+              height: 300,
+              child: Image.asset(
+                'images/login_png.png',
+              ),
+            ),
+            Container(
               decoration: BoxDecoration(
                 color: Color(0xFF5125D2),
                 borderRadius: BorderRadius.only(
@@ -247,8 +247,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

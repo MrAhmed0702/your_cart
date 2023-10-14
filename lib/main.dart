@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         "OTP": (context) => const OTP_Page(),
         "updatepassword": (context) => const UpdatePasswordPage(),
       },
+      // home: HomePage(),
     );
   }
 }
