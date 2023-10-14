@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:your_cart/Screen/Login.dart';
+import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/Welcome.dart';
 
 void main() {
@@ -12,6 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false, home: const Welcome());
+      debugShowCheckedModeBanner: false,
+      initialRoute: "welcome",
+      routes: {
+        "welcome": (context) => Welcome(),
+        "login": (context) => LoginPage(),
+        "registration" : (context) => RegistrationPage(),
+        
+      },
+    );
   }
 }

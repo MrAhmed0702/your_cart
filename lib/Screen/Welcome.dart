@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:your_cart/Screen/Login.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -54,6 +55,8 @@ class Welcome extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Add functionality for the Get Started button here
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (BuildContext context) => LoginPage()));
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(
