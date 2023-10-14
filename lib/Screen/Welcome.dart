@@ -43,14 +43,21 @@ class Welcome extends StatelessWidget {
                   fontSize: 37,
                 ),
               ),
-              const SizedBox(height: 20),
-              const Text(
-                'Find it now, Buy it here',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 14,
-                ),
+
+            ),
+            const SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {
+                // Add functionality for the Get Started button here
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (BuildContext context) => LoginPage()));
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: const Color(0xFF5125D2),
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12))),
+
               ),
               const SizedBox(height: 40),
               ElevatedButton(
