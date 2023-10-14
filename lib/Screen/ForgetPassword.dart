@@ -1,18 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/Login.dart';
+import 'package:your_cart/Screen/OTP_Password_Page.dart';
 
-class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({super.key});
+class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
-  State<RegistrationPage> createState() => _RegistrationPageState();
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
 
-class _RegistrationPageState extends State<RegistrationPage> {
-  bool? check = false;
-
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +43,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Sign Up",
+                          "Forgot Password",
                           style: TextStyle(
                             fontFamily: "Poppins2",
                             fontSize: 30,
@@ -57,28 +56,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       height: 15,
                     ),
                     Text(
-                      'Please Enter Your Details Here To\nRegister YourSelf',
+                      'Please Enter Registered Email To Recieve\nA OTP',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                           fontFamily: "Poppins2"),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "First Name",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -98,58 +80,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Phone Number",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Password",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Confirm Password",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +98,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        HomePage()));
+                                        OTP_Page()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -175,13 +106,43 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               vertical: 3,
                             ),
                             child: Text(
-                              'Sign Up',
+                              'Send OTP',
                               style: TextStyle(
                                 fontFamily: 'Poppins2',
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF5125D2),
                               ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Wanna Try Again? ",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Poppins2",
+                            fontSize: 15,
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    LoginPage()));
+                          },
+                          child: Text(
+                            "Login",
+                            style: TextStyle(
+                              fontFamily: 'Poppins2',
+                              color: Colors.white,
                             ),
                           ),
                         ),

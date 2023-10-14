@@ -1,18 +1,17 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/ForgetPassword.dart';
+import 'package:your_cart/Screen/UpdatePassword.dart';
 
-class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({super.key});
+class OTP_Page extends StatefulWidget {
+  const OTP_Page({super.key});
 
   @override
-  State<RegistrationPage> createState() => _RegistrationPageState();
+  State<OTP_Page> createState() => _OTP_PageState();
 }
 
-class _RegistrationPageState extends State<RegistrationPage> {
-  bool? check = false;
-
+class _OTP_PageState extends State<OTP_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +43,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Sign Up",
+                          "Enter OTP",
                           style: TextStyle(
                             fontFamily: "Poppins2",
                             fontSize: 30,
@@ -57,28 +56,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       height: 15,
                     ),
                     Text(
-                      'Please Enter Your Details Here To\nRegister YourSelf',
+                      'Please Enter The OTP That Receive On\nYour E-Mail',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                           fontFamily: "Poppins2"),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "First Name",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -98,58 +80,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Phone Number",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Password",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Confirm Password",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +98,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        HomePage()));
+                                        UpdatePasswordPage()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -175,13 +106,43 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               vertical: 3,
                             ),
                             child: Text(
-                              'Sign Up',
+                              'Confirm OTP',
                               style: TextStyle(
                                 fontFamily: 'Poppins2',
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF5125D2),
                               ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Didn't Received OTP? ",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Poppins2",
+                            fontSize: 15,
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    ForgotPasswordPage()));
+                          },
+                          child: Text(
+                            "Resend OTP",
+                            style: TextStyle(
+                              fontFamily: 'Poppins2',
+                              color: Colors.white,
                             ),
                           ),
                         ),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:your_cart/Screen/ForgetPassword.dart';
+import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Login.dart';
+import 'package:your_cart/Screen/OTP_Password_Page.dart';
 import 'package:your_cart/Screen/Registration.dart';
+import 'package:your_cart/Screen/UpdatePassword.dart';
 import 'package:your_cart/Screen/Welcome.dart';
 
 void main() {
@@ -20,6 +24,10 @@ class MyApp extends StatelessWidget {
         "welcome": (context) => Welcome(),
         "login": (context) => LoginPage(),
         "registration" : (context) => RegistrationPage(),
+        "homepage" : (context) => HomePage(),
+        "forgotpassword" : (context) => ForgotPasswordPage(),
+        "OTP" :(context) => OTP_Page(),
+        "updatepassword" :(context) => UpdatePasswordPage(),
         
       },
     );

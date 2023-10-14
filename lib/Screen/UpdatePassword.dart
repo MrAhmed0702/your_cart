@@ -1,18 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/Login.dart';
 
-class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({super.key});
+class UpdatePasswordPage extends StatefulWidget {
+  const UpdatePasswordPage({super.key});
 
   @override
-  State<RegistrationPage> createState() => _RegistrationPageState();
+  State<UpdatePasswordPage> createState() => _UpdatePasswordPageState();
 }
 
-class _RegistrationPageState extends State<RegistrationPage> {
-  bool? check = false;
-
+class _UpdatePasswordPageState extends State<UpdatePasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +42,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Sign Up",
+                          "Change Password",
                           style: TextStyle(
                             fontFamily: "Poppins2",
                             fontSize: 30,
@@ -57,62 +55,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       height: 15,
                     ),
                     Text(
-                      'Please Enter Your Details Here To\nRegister YourSelf',
+                      'Enter The New Password',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                           fontFamily: "Poppins2"),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "First Name",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Email",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Phone Number",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -149,7 +96,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +114,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        HomePage()));
+                                        LoginPage()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -175,7 +122,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               vertical: 3,
                             ),
                             child: Text(
-                              'Sign Up',
+                              'Set Password',
                               style: TextStyle(
                                 fontFamily: 'Poppins2',
                                 fontSize: 25,

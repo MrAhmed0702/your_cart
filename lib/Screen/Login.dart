@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:your_cart/Screen/ForgetPassword.dart';
+import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Registration.dart';
 
 class LoginPage extends StatefulWidget {
@@ -102,12 +104,20 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          "Forget Password?",
-                          style: TextStyle(
-                            color: Colors.white,
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    ForgotPasswordPage()));
+                          },
+                          child: Text(
+                            "Forgot Password?",
+                            style: TextStyle(
+                              fontFamily: 'Poppins2',
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -125,7 +135,12 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             backgroundColor: Colors.white,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        HomePage()));
+                          },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 40,
@@ -167,7 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                                         RegistrationPage()));
                               },
                               child: Text(
-                                " Sign Up!",
+                                "SignUp!",
                                 style: TextStyle(
                                   fontFamily: 'Poppins2',
                                   color: Colors.white,
