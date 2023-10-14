@@ -56,7 +56,7 @@ class Welcome extends StatelessWidget {
               onPressed: () {
                 // Add functionality for the Get Started button here
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (BuildContext context) => const LoginPage()));
+                    builder: (BuildContext context) => LoginPage()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
