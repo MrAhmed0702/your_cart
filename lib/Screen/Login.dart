@@ -6,13 +6,24 @@ import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Registration.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final controller;
+  Function()? onTap;
+
+  LoginPage({
+    super.key,
+    required this.controller,
+    required this.onTap,
+  });
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,6 +81,8 @@ class _LoginPageState extends State<LoginPage> {
                       height: 10,
                     ),
                     TextField(
+                      controller: emailController,
+                      obscureText: false,
                       decoration: InputDecoration(
                         hintText: 'Email',
                         hintStyle: TextStyle(
@@ -86,6 +99,8 @@ class _LoginPageState extends State<LoginPage> {
                       height: 10,
                     ),
                     TextField(
+                      controller: passwordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Password',
                         hintStyle: TextStyle(
@@ -126,33 +141,36 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(12),
+                        GestureDetector(
+                          onTap: () => HomePage(),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(12),
+                                ),
                               ),
+                              backgroundColor: Colors.white,
                             ),
-                            backgroundColor: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        HomePage()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 40,
-                              vertical: 3,
-                            ),
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                fontFamily: 'Poppins2',
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF5125D2),
+                            onPressed: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          HomePage()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 40,
+                                vertical: 3,
+                              ),
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins2',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF5125D2),
+                                ),
                               ),
                             ),
                           ),
