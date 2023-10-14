@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.all(12),
             height: 300,
             child: Image.asset(
-              'images/welcome.png',
+              'images/login_png.png',
             ),
           ),
           Expanded(
@@ -33,8 +33,8 @@ class _LoginPageState extends State<LoginPage> {
               decoration: BoxDecoration(
                 color: Color(0xFF5125D2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(22),
+                  topRight: Radius.circular(22),
                 ),
               ),
               child: Padding(

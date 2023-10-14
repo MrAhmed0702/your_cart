@@ -25,7 +25,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             ),
             Container(
               child: Image.asset(
-                'images/welcome.png',
+                'images/registration_png.png',
               ),
             ),
             Container(
