@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Welcome.dart';
 
 class SplashScreen3 extends StatefulWidget {
   @override
@@ -22,8 +21,6 @@ class _SplashScreen3State extends State<SplashScreen3> {
         child: Stack(
           children: [
             Center(
-              // left: 15,
-              // top: 414,
               child: Container(
                 width: 400,
                 height: 400,
@@ -34,8 +31,6 @@ class _SplashScreen3State extends State<SplashScreen3> {
               ),
             ),
             Center(
-              // left: 49,
-              // top: 414,
               child: Text(
                 'Namaste',
                 style: TextStyle(
@@ -53,4 +48,3 @@ class _SplashScreen3State extends State<SplashScreen3> {
     );
   }
 }
-

@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:your_cart/Components/my_textfield.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -111,6 +112,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             width: 125,
                             height: 43.47,
                             child: TextFormField(
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Poppins2",
+                                fontSize: 20,
+                              ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return "This field is requrired";
@@ -140,6 +146,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             width: 125,
                             height: 43.47,
                             child: TextFormField(
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Poppins2",
+                                fontSize: 20,
+                              ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return "This field is requrired";
@@ -167,7 +178,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       SizedBox(
                         height: 10,
                       ),
-                      TextFormField(
+                      MyTextField(
+                        controller: emailController,
+                        hintText: 'Email',
+                        obscureText: false,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "This field is requrired";
@@ -177,25 +191,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             return null;
                           }
                         },
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          hintText: "Email",
-                          hintStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontFamily: 'Poppins2'),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      TextFormField(
-                        keyboardType: TextInputType.number,
+                      MyTextField(
+                        controller: phoneNumberController,
+                        hintText: 'Phone Number',
+                        obscureText: false,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "This field is required";
@@ -205,25 +208,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             return null;
                           }
                         },
-                        controller: phoneNumberController,
-                        decoration: InputDecoration(
-                          hintText: "Phone Number",
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2',
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        keyboardType: TextInputType.number,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      TextFormField(
+                      MyTextField(
+                        controller: passwordController,
+                        hintText: 'Password',
+                        obscureText: true,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "This field is required";
@@ -233,46 +226,23 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             return null;
                           }
                         },
-                        controller: passwordController,
-                        decoration: InputDecoration(
-                          hintText: "Password",
-                          hintStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontFamily: 'Poppins2'),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      TextFormField(
+                      MyTextField(
+                        controller: confirmPasswordController,
+                        hintText: 'Confirm Password',
+                        obscureText: true,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "This field required";
+                            return "This field is required";
                           } else if (value.length < 6) {
                             return "Too short password";
                           } else {
                             return null;
                           }
                         },
-                        controller: confirmPasswordController,
-                        decoration: InputDecoration(
-                          hintText: "Confirm Password",
-                          hintStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontFamily: 'Poppins2'),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
                       ),
                       SizedBox(
                         height: 20,
@@ -290,13 +260,17 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               backgroundColor: Colors.white,
                             ),
                             onPressed: () {
-                              if (globalKey.currentState!.validate()) {
+                              if (globalKey.currentState!.validate())
+                              {
                                 if (passwordController.text.compareTo(
                                         confirmPasswordController.text) ==
-                                    0) {
+                                    0)
+                                {
                                   signUpUser(emailController.text,
                                       passwordController.text);
-                                } else {
+                                } 
+                                else 
+                                {
                                   print("Password not matching");
                                 }
                               }
