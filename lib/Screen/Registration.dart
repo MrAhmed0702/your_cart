@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:your_cart/Components/my_textfield.dart';
+import 'package:your_cart/Screen/Login.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -13,6 +14,7 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+  bool? ischeck = false;
   bool? check = false;
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
@@ -109,6 +111,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             height: 10,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SizedBox(
                                 width: 125,
@@ -140,9 +143,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 41,
                               ),
                               SizedBox(
                                 width: 125,
@@ -249,6 +249,35 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           SizedBox(
                             height: 20,
                           ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Checkbox(
+                                  checkColor : Color(0xFF5125D2),
+                                  value: ischeck,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      ischeck = newValue;
+                                    });
+                                  }
+                                  ),
+
+                                  // 10.width,
+                                  RichText(text: TextSpan(
+                                    children: [
+                                      TextSpan(text: "I agree to the Terms & Conditions \n and Privacy & Policy " ,style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontFamily: "Poppins2"))
+                                    ]
+                                  ))
+
+                              ],
+                            ),
+                            SizedBox(
+                            height: 10,
+                          ),
+                          
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -291,6 +320,36 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               ),
                             ],
                           ),
+                          SizedBox(height:10),
+                          Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "You Have a Account ?",
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins2',
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        LoginPage()));
+                                      },
+                                      child: Text(
+                                        " Login ",
+                                        style: TextStyle(
+                                          fontFamily: 'Poppins2',
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                          
                         ],
                       ),
                     ),

@@ -203,11 +203,12 @@ class _LoginPageState extends State<LoginPage> {
                                   height: 20,
                                 ),
                                 Text(
-                                  "OR",
+                                  "Or Login With",
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
                                     color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: 'Poppins',
+                                   fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 SizedBox(
