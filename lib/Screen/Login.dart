@@ -15,14 +15,21 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   void signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
+    print("Button Pressed");
+    await FirebaseAuth.instance
+        .signInWithEmailAndPassword(
       email: emailController.text,
       password: passwordController.text,
-    );
+    )
+        .then((value) {
+      Navigator.pushReplacementNamed(context, "homepage");
+    }).onError((error, stackTrace) {
+      debugPrint("Error");
+    });
   }
 
   @override
@@ -122,6 +129,12 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           MyButton(onTap: signUserIn),
+                          // MaterialButton(
+                          //   onPressed: () {
+                          //     signUserIn();
+                          //   },
+                          //   child: const Text("Login"),
+                          // )
                         ],
                       ),
                       SizedBox(

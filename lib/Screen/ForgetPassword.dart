@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:your_cart/Screen/Login.dart';
-import 'package:your_cart/Screen/OTP_Password_Page.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -12,9 +12,26 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  bool isValidEmail(String email) {
+    final RegExp emailRegex = RegExp(r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
+    return emailRegex.hasMatch(email);
+  }
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  Future<void> sendResetLink(String email) async {
+    await auth.sendPasswordResetEmail(email: email).then((value) {
+      debugPrint("Reset link sent check email");
+    }).onError((error, stackTrace) {
+      debugPrint("an error occured");
+    });
+  }
+
+  TextEditingController emailController = TextEditingController();
+  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           SizedBox(
@@ -65,16 +82,29 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     SizedBox(
                       height: 10,
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: "Email",
-                        hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2'),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
+                    Form(
+                      key: globalKey,
+                      child: TextFormField(
+                        controller: emailController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "This field is requred";
+                          } else if (!isValidEmail(value)) {
+                            return "Invalid email";
+                          } else {
+                            return null;
+                          }
+                        },
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          hintStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontFamily: 'Poppins2'),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -95,10 +125,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             backgroundColor: Colors.white,
                           ),
                           onPressed: () {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        OTP_Page()));
+                            sendResetLink(emailController.text);
                           },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(

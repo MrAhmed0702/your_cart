@@ -21,7 +21,7 @@ class MyButton extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: onTap,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 40,
