@@ -49,149 +49,161 @@ class _LoginPageState extends State<LoginPage> {
                   topRight: Radius.circular(22),
                 ),
               ),
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 20, 40, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Login here',
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(40, 20, 40, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Login here',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontFamily: "Poppins2",
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Please Enter Your Login Credentials',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontFamily: 'Poppins2',
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    MyTextField(
+                        controller: emailController,
+                        hintText: "Email",
+                        obscureText: false),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    MyTextField(
+                        controller: passwordController,
+                        hintText: "Password",
+                        obscureText: true),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    ForgotPasswordPage()));
+                          },
+                          child: Text(
+                            "Forgot Password?",
                             style: TextStyle(
-                              fontSize: 30,
+                              fontFamily: 'Poppins2',
                               color: Colors.white,
-                              fontFamily: "Poppins2",
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Please Enter Your Login Credentials',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontFamily: 'Poppins2',
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      MyTextField(
-                          controller: emailController,
-                          hintText: "Email",
-                          obscureText: false),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      MyTextField(
-                          controller: passwordController,
-                          hintText: "Password",
-                          obscureText: true),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      ForgotPasswordPage()));
-                            },
-                            child: Text(
-                              "Forgot Password?",
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        MyButton(onTap: signUserIn),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don't have an account? ",
                               style: TextStyle(
                                 fontFamily: 'Poppins2',
                                 color: Colors.white,
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          MyButton(onTap: signUserIn),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Don't have an account? ",
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        RegistrationPage()));
+                              },
+                              child: Text(
+                                "SignUp!",
                                 style: TextStyle(
                                   fontFamily: 'Poppins2',
                                   color: Colors.white,
                                 ),
                               ),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          RegistrationPage()));
-                                },
-                                child: Text(
-                                  "SignUp!",
-                                  style: TextStyle(
-                                    fontFamily: 'Poppins2',
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              )
-                            ],
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "OR",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "OR",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(onPressed: () {
+                              // signInWithGoogle()
+                            }, child: CircleAvatar(
+                                  radius: 40,
+                                  backgroundColor: Colors.white,
+                                  child: Image.asset('images/google.png'),
+                                ),),
+
+                            // child : ElevatedButton(
+                            //   onPressed : ()
+                            //   {
+                            //   signInWithGoogl()
+                            //   }
+                            //   child : CircleAvatar(
+                            //     radius: 40,
+                            //     backgroundColor: Colors.white,
+                            //     child: Image.asset('images/google.png'),
+                            //   ),
+
+                            SizedBox(
+                              width: 10,
                             ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundColor: Colors.white,
-                                child: Image.asset('images/google.png'),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundColor: Colors.white,
-                                child: Image.asset('images/apple.png'),
-                              ),
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundColor: Colors.white,
+                              child: Image.asset('images/apple.png'),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
             ),
@@ -200,4 +212,10 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+
+
+}
+
+class GoogleSignInAccount {
 }

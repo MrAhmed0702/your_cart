@@ -10,6 +10,11 @@ import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/UpdatePassword.dart';
 import 'package:your_cart/Screen/Welcome.dart';
 import 'package:your_cart/Screen/auth_page.dart';
+import 'package:your_cart/Screen/splash_screen_0.dart';
+import 'package:your_cart/Screen/splash_screen_1.dart';
+import 'package:your_cart/Screen/splash_screen_2.dart';
+import 'package:your_cart/Screen/splash_screen_3.dart';
+
 
 import 'firebase_options.dart';
 
@@ -29,18 +34,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthPage(),
-      // initialRoute: "welcome",
-      // routes: {
-      //   "welcome": (context) => const Welcome(),
-      //   "login": (context) => LoginPage(),
-      //   "registration": (context) => const RegistrationPage(),
-      //   "homepage": (context) => const HomePage(),
-      //   "forgotpassword": (context) => const ForgotPasswordPage(),
-      //   "OTP": (context) => const OTP_Page(),
-      //   "updatepassword": (context) => const UpdatePasswordPage(),
-      //   "authpage": (context) => const AuthPage(),
-      // },
+      // home: SplashScreen(),
+      initialRoute: "/",
+      routes: {
+        '/': (context) => SplashScreen0(),
+        '/splash1': (context) => SplashScreen1(),
+        '/splash2': (context) => SplashScreen2(),
+        '/splash3': (context) => SplashScreen3(),
+        "welcome": (context) => const Welcome(),
+        "login": (context) => LoginPage(),
+        "registration": (context) => const RegistrationPage(),
+        "homepage": (context) => const HomePage(),
+        "forgotpassword": (context) => const ForgotPasswordPage(),
+        "OTP": (context) => const OTP_Page(),
+        "updatepassword": (context) => const UpdatePasswordPage(),
+        "authpage": (context) => const AuthPage(),
+      },
     );
   }
 }
