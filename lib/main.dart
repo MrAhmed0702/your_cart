@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
@@ -7,13 +5,11 @@ import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Login.dart';
 import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/Welcome.dart';
-import 'package:your_cart/Services/auth_page.dart';
-import 'package:your_cart/Screen/auth_page.dart';
 import 'package:your_cart/Screen/splash_screen_0.dart';
 import 'package:your_cart/Screen/splash_screen_1.dart';
 import 'package:your_cart/Screen/splash_screen_2.dart';
 import 'package:your_cart/Screen/splash_screen_3.dart';
-
+import 'package:your_cart/Services/auth_page.dart';
 
 import 'Services/firebase_options.dart';
 
