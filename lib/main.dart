@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Footer_Menu.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Login.dart';
