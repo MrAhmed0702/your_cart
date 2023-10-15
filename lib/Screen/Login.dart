@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         .then((value) {
       Navigator.pushReplacementNamed(context, "homepage");
     }).onError((error, stackTrace) {
-      debugPrint("Error");
+      debugPrint("error");
     });
   }
 
