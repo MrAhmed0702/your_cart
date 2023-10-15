@@ -55,6 +55,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '124866883413',
     projectId: 'your-cart-d92d9',
     authDomain: 'your-cart-d92d9.firebaseapp.com',
+    databaseURL: 'https://your-cart-d92d9-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'your-cart-d92d9.appspot.com',
   );
 
@@ -63,6 +64,7 @@ class DefaultFirebaseOptions {
     appId: '1:124866883413:android:3d5be6f6c3144809c289dc',
     messagingSenderId: '124866883413',
     projectId: 'your-cart-d92d9',
+    databaseURL: 'https://your-cart-d92d9-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'your-cart-d92d9.appspot.com',
   );
 }
