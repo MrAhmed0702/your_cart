@@ -6,6 +6,8 @@ class Welcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height_c = MediaQuery.of(context).size.height;
+    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFF5125D2),
       body: SingleChildScrollView(
@@ -13,8 +15,8 @@ class Welcome extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(
-                height: 40,
+              SizedBox(
+                height: height_c * 0.06,
               ),
               const Text(
                 'Welcome!',
@@ -25,14 +27,14 @@ class Welcome extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 45),
+              SizedBox(height: height_c * 0.05),
               SizedBox(
-                height: 300,
+                height: height_c * 0.4,
                 child: Image.asset(
                   "images/welcome.png",
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: height_c * 0.05),
               const Text(
                 'You want \nAuthentic, Here \nyou go!',
                 textAlign: TextAlign.center,
@@ -43,9 +45,19 @@ class Welcome extends StatelessWidget {
                   fontSize: 37,
                 ),
               ),
-              const SizedBox(
-                height: 40
+              SizedBox(height: height_c * 0.02),
+              const Text(
+                'Find it now, Buy at here',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  decorationColor: Color.fromARGB(255, 140, 143, 151),
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppins3',
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
               ),
+              const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
                   // Add functionality for the Get Started button here

@@ -118,7 +118,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SizedBox(
-                                width: width_c *.35,
+                                width: width_c * .35,
                                 height: 43.47,
                                 child: TextFormField(
                                   style: TextStyle(
@@ -253,35 +253,34 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           SizedBox(
                             height: 20,
                           ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Checkbox(
-                                  checkColor : Color(0xFF5125D2),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Checkbox(
+                                  checkColor: Color(0xFF5125D2),
                                   value: ischeck,
                                   onChanged: (newValue) {
                                     setState(() {
                                       ischeck = newValue;
                                     });
-                                  }
-                                  ),
+                                  }),
 
-                                  // 10.width,
-                                  RichText(text: TextSpan(
-                                    children: [
-                                      TextSpan(text: "I agree to the Terms & Conditions \n and Privacy & Policy " ,style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontFamily: "Poppins2"))
-                                    ]
-                                  ))
-
-                              ],
-                            ),
-                            SizedBox(
+                              // 10.width,
+                              RichText(
+                                  text: TextSpan(children: [
+                                TextSpan(
+                                    text:
+                                        "I agree to the Terms & Conditions \n and Privacy & Policy ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontFamily: "Poppins2"))
+                              ]))
+                            ],
+                          ),
+                          SizedBox(
                             height: 10,
                           ),
-                          
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -324,36 +323,33 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               ),
                             ],
                           ),
-                          SizedBox(height:10),
+                          SizedBox(height: 10),
                           Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "You Have a Account ?",
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins2',
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder:
-                                                    (BuildContext context) =>
-                                                        LoginPage()));
-                                      },
-                                      child: Text(
-                                        " Login ",
-                                        style: TextStyle(
-                                          fontFamily: 'Poppins2',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    )
-                                  ],
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "You Have a Account ?",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins2',
+                                  color: Colors.white,
                                 ),
-                          
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          LoginPage()));
+                                },
+                                child: Text(
+                                  " Login ",
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins2',
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ],
                       ),
                     ),

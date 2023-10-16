@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: FooterMenu(),
+      // home: HomePage(),
       initialRoute: "/",
       routes: {
         '/': (context) => SplashScreen0(),

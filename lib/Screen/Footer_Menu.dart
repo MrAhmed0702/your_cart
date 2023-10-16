@@ -11,13 +11,13 @@ class FooterMenuState extends State<FooterMenu> {
   late PageController _pageController;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _pageController = PageController();
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _pageController.dispose();
     super.dispose();
   }
@@ -91,7 +91,7 @@ class FooterMenuState extends State<FooterMenu> {
                             duration: Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
-                            index == currentIndex ? displayWidth * .13 : 0,
+                                index == currentIndex ? displayWidth * .13 : 0,
                           ),
                           AnimatedOpacity(
                             opacity: index == currentIndex ? 1 : 0,
@@ -116,7 +116,7 @@ class FooterMenuState extends State<FooterMenu> {
                             duration: Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
-                            index == currentIndex ? displayWidth * .03 : 20,
+                                index == currentIndex ? displayWidth * .03 : 20,
                           ),
                           Icon(
                             listOfIcons[index],
@@ -143,7 +143,6 @@ class FooterMenuState extends State<FooterMenu> {
     Icons.shopping_cart_outlined,
     Icons.shopping_bag_outlined,
     Icons.favorite_rounded,
-
   ];
 
   List<String> listOfStrings = [
