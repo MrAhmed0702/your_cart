@@ -14,6 +14,7 @@ class LoginPage extends StatefulWidget {
 
   @override
   State<LoginPage> createState() => _LoginPageState();
+
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -41,8 +42,11 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
+    double height_c = MediaQuery.of(context).size.height;
+    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: [
@@ -56,12 +60,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(12),
-                    height: 300,
+                    height: height_c * .3,
                     child: Image.asset(
                       'images/login_png.png',
                     ),
                   ),
                   Container(
+                    height: height_c * 0.7,
                     decoration: BoxDecoration(
                       color: Color(0xFF5125D2),
                       borderRadius: BorderRadius.only(

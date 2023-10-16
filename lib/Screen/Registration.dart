@@ -55,6 +55,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   Widget build(BuildContext context) {
+    double height_c = MediaQuery.of(context).size.height;
+    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: [
@@ -67,11 +69,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     height: 50,
                   ),
                   Container(
+                    height: height_c * .3,
                     child: Image.asset(
                       'images/registration_png.png',
                     ),
                   ),
                   Container(
+                    height: height_c * .7,
                     decoration: BoxDecoration(
                       color: Color(0xFF5125D2),
                       borderRadius: BorderRadius.only(
@@ -101,20 +105,20 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             height: 15,
                           ),
                           Text(
-                            'Please Enter Your Details Here To\nRegister YourSelf',
+                            'Please Enter Your Details Here To Register YourSelf',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 20,
                                 fontFamily: "Poppins2"),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 12,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SizedBox(
-                                width: 125,
+                                width: width_c *.35,
                                 height: 43.47,
                                 child: TextFormField(
                                   style: TextStyle(
@@ -145,7 +149,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 125,
+                                width: width_c * .35,
                                 height: 43.47,
                                 child: TextFormField(
                                   style: TextStyle(
