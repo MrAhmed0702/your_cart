@@ -27,7 +27,7 @@ class Welcome extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-               SizedBox(height: height_c * 0.05),
+              SizedBox(height: height_c * 0.05),
               SizedBox(
                 height: height_c * 0.4,
                 child: Image.asset(
@@ -45,7 +45,6 @@ class Welcome extends StatelessWidget {
                   fontSize: 37,
                 ),
               ),
-
               SizedBox(height: height_c * 0.02),
               const Text(
                 'Find it now, Buy at here',
@@ -58,9 +57,7 @@ class Welcome extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              const SizedBox(
-                height: 40
-              ),
+              const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
                   // Add functionality for the Get Started button here

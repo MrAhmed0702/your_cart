@@ -14,7 +14,6 @@ class LoginPage extends StatefulWidget {
 
   @override
   State<LoginPage> createState() => _LoginPageState();
-
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -41,7 +40,6 @@ class _LoginPageState extends State<LoginPage> {
       debugPrint("error");
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -213,7 +211,7 @@ class _LoginPageState extends State<LoginPage> {
                                     color: Colors.white,
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
-                                   fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 SizedBox(
