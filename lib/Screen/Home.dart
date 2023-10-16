@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
                 top: 9,
                 child: Container(
                   width: width_c * 0.97,
-                  height: height_c * .364,
+                  height: height_c * .420,
                   decoration: ShapeDecoration(
                     color: const Color(0xFF5125D2),
                     shape: RoundedRectangleBorder(
@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-
+        
               Padding(
                 padding: const EdgeInsets.fromLTRB(108, 258, 0, 0),
                 child: Column(
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-
+        
               Padding(
                 padding: const EdgeInsets.fromLTRB(184, 258, 0, 0),
                 child: Column(
@@ -238,7 +238,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-
+        
               Padding(
                 padding: const EdgeInsets.fromLTRB(259, 258, 0, 0),
                 child: Column(
@@ -274,7 +274,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-
+        
               Padding(
                 padding: const EdgeInsets.fromLTRB(334, 258, 0, 0),
                 child: Column(

@@ -29,20 +29,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: FooterMenu(),
-      initialRoute: "/",
-      routes: {
-        '/': (context) => SplashScreen0(),
-        '/splash1': (context) => SplashScreen1(),
-        '/splash2': (context) => SplashScreen2(),
-        '/splash3': (context) => SplashScreen3(),
-        "welcome": (context) => const Welcome(),
-        "login": (context) => LoginPage(),
-        "registration": (context) => const RegistrationPage(),
-        "homepage": (context) => const HomePage(),
-        "forgotpassword": (context) => const ForgotPasswordPage(),
-        "authpage": (context) => const AuthPage(),
-      },
+      home: Welcome(),
+      // initialRoute: "/",
+      // routes: {
+      //   '/': (context) => SplashScreen0(),
+      //   '/splash1': (context) => SplashScreen1(),
+      //   '/splash2': (context) => SplashScreen2(),
+      //   '/splash3': (context) => SplashScreen3(),
+      //   "welcome": (context) => const Welcome(),
+      //   "login": (context) => LoginPage(),
+      //   "registration": (context) => const RegistrationPage(),
+      //   "homepage": (context) => const HomePage(),
+      //   "forgotpassword": (context) => const ForgotPasswordPage(),
+      //   "authpage": (context) => const AuthPage(),
+      // },
     );
   }
 }
