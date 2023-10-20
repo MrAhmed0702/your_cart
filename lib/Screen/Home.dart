@@ -339,9 +339,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                     child: const Text(
                       'More',
                       style: TextStyle(
@@ -353,11 +351,311 @@ class _Home_ScreenState extends State<Home_Screen> {
                       ),
                     ),
                   ),
-                  
                 ],
               ),
             ),
-            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 23),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        width: MediaQuery.of(context).size.width * 0.41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                                Border.all(color: Colors.blueAccent, width: 2)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/Product_Page/Synthetic_Mask.png",
+                                width: 148,
+                                height: 148,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Synthetics Mask",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0.10,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "\u{20B9} 250.00",
+                                    style: TextStyle(
+                                      color: Color(0xFF5125D2),
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 19,
+                                    backgroundColor:
+                                        const Color.fromRGBO(81, 37, 210, 1),
+                                    child: IconButton(
+                                      icon: const Icon(
+                                          Icons.favorite_border_outlined,
+                                          size: 23),
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      onPressed: () {},
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 23, right: 22),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        width: MediaQuery.of(context).size.width * 0.41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                                Border.all(color: Colors.blueAccent, width: 2)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/Product_Page/Synthetic_Mask.png",
+                                width: 148,
+                                height: 148,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Synthetics Mask",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0.10,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "\u{20B9} 250.00",
+                                    style: TextStyle(
+                                      color: Color(0xFF5125D2),
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 19,
+                                    backgroundColor:
+                                        const Color.fromRGBO(81, 37, 210, 1),
+                                    child: IconButton(
+                                      icon: const Icon(
+                                          Icons.favorite_border_outlined,
+                                          size: 23),
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      onPressed: () {},
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 23),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        width: MediaQuery.of(context).size.width * 0.41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                                Border.all(color: Colors.blueAccent, width: 2)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/Product_Page/Synthetic_Mask.png",
+                                width: 148,
+                                height: 148,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Synthetics Mask",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0.10,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "\u{20B9} 250.00",
+                                    style: TextStyle(
+                                      color: Color(0xFF5125D2),
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 19,
+                                    backgroundColor:
+                                        const Color.fromRGBO(81, 37, 210, 1),
+                                    child: IconButton(
+                                      icon: const Icon(
+                                          Icons.favorite_border_outlined,
+                                          size: 23),
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      onPressed: () {},
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 23, right: 22),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        width: MediaQuery.of(context).size.width * 0.41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                                Border.all(color: Colors.blueAccent, width: 2)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/Product_Page/Synthetic_Mask.png",
+                                width: 148,
+                                height: 148,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Synthetics Mask",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0.10,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "\u{20B9} 250.00",
+                                    style: TextStyle(
+                                      color: Color(0xFF5125D2),
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 19,
+                                    backgroundColor:
+                                        const Color.fromRGBO(81, 37, 210, 1),
+                                    child: IconButton(
+                                      icon: const Icon(
+                                          Icons.favorite_border_outlined,
+                                          size: 23),
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      onPressed: () {},
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
