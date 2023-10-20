@@ -68,7 +68,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   SizedBox(
                     height: 50,
                   ),
-                  Container(
+                  SizedBox(
                     height: height_c * .3,
                     child: Image.asset(
                       'images/registration_png.png',

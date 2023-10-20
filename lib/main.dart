@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:your_cart/Screen/Footer_Menu.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Login.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: HomePage(),
+      // home: FooterMenu(),
       initialRoute: "/",
       routes: {
         '/': (context) => SplashScreen0(),
@@ -39,9 +40,10 @@ class MyApp extends StatelessWidget {
         "welcome": (context) => const Welcome(),
         "login": (context) => LoginPage(),
         "registration": (context) => const RegistrationPage(),
-        "homepage": (context) => const HomePage(),
+        "homepage": (context) => const Home_Screen(),
         "forgotpassword": (context) => const ForgotPasswordPage(),
         "authpage": (context) => const AuthPage(),
+        "footer_menu" : (context) =>  FooterMenu(),
       },
     );
   }

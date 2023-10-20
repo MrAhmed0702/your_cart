@@ -9,7 +9,7 @@ class _SplashScreen3State extends State<SplashScreen3> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(const Duration(milliseconds: 1000), () {
       Navigator.pushReplacementNamed(context, 'welcome');
     });
   }
@@ -24,13 +24,13 @@ class _SplashScreen3State extends State<SplashScreen3> {
               child: Container(
                 width: 400,
                 height: 400,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Color(0xFF5125D2),
                   shape: CircleBorder(),
                 ),
               ),
             ),
-            Center(
+            const Center(
               child: Text(
                 'Namaste',
                 style: TextStyle(

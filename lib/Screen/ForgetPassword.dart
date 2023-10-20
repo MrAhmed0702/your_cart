@@ -40,10 +40,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               SizedBox(
                 height: 50,
               ),
-              Container(
-                child: Image.asset(
-                  'images/forgot_png.png',
-                ),
+              Image.asset(
+                'images/forgot_png.png',
               ),
               Expanded(
                 child: Container(

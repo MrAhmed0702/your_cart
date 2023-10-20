@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:your_cart/Screen/Cart_Page/Cart_Page.dart';
+import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/Order_Page/Order_Page.dart';
+import 'package:your_cart/Screen/Wishlist_Page/Wishlist_Page.dart';
 
 class FooterMenu extends StatefulWidget {
   @override
@@ -13,7 +17,8 @@ class FooterMenuState extends State<FooterMenu> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    // _pageController = PageController();
+    _pageController = PageController(initialPage: currentIndex);
   }
 
   @override
@@ -22,20 +27,38 @@ class FooterMenuState extends State<FooterMenu> {
     super.dispose();
   }
 
+  void changePage(int index) {
+    setState(() {
+      currentIndex = index;
+      _pageController.jumpToPage(index);
+      HapticFeedback.lightImpact();
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     double displayWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      body :PageView(
+        controller: _pageController,
+        children: pages, 
+        onPageChanged: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+      ),
       bottomNavigationBar: Container(
-        margin: EdgeInsets.fromLTRB(7, 0, 7, 14),
+        margin: const EdgeInsets.fromLTRB(7, 0, 7, 14),
         height: 60,
         decoration: BoxDecoration(
-          color: Color(0xFF5125D2),
+          color: const Color(0xFF5125D2),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(.1),
               blurRadius: 30,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
           borderRadius: BorderRadius.circular(50),
@@ -47,8 +70,7 @@ class FooterMenuState extends State<FooterMenu> {
           itemBuilder: (context, index) => InkWell(
             onTap: () {
               setState(() {
-                currentIndex = index;
-
+              changePage(index);
                 HapticFeedback.lightImpact();
               });
             },
@@ -57,14 +79,14 @@ class FooterMenuState extends State<FooterMenu> {
             child: Stack(
               children: [
                 AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: const Duration(seconds: 1),
                   curve: Curves.fastLinearToSlowEaseIn,
                   width: index == currentIndex
                       ? displayWidth * .32
                       : displayWidth * .18,
                   alignment: Alignment.center,
                   child: AnimatedContainer(
-                    duration: Duration(seconds: 1),
+                    duration: const Duration(seconds: 1),
                     curve: Curves.fastLinearToSlowEaseIn,
                     height: index == currentIndex ? displayWidth * .12 : 0,
                     width: index == currentIndex ? displayWidth * .32 : 0,
@@ -77,7 +99,7 @@ class FooterMenuState extends State<FooterMenu> {
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: const Duration(seconds: 1),
                   curve: Curves.fastLinearToSlowEaseIn,
                   width: index == currentIndex
                       ? displayWidth * .31
@@ -88,20 +110,20 @@ class FooterMenuState extends State<FooterMenu> {
                       Row(
                         children: [
                           AnimatedContainer(
-                            duration: Duration(seconds: 1),
+                            duration: const Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
                                 index == currentIndex ? displayWidth * .13 : 0,
                           ),
                           AnimatedOpacity(
                             opacity: index == currentIndex ? 1 : 0,
-                            duration: Duration(seconds: 1),
+                            duration: const Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             child: Text(
                               index == currentIndex
                                   ? '${listOfStrings[index]}'
                                   : '',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 15,
@@ -113,7 +135,7 @@ class FooterMenuState extends State<FooterMenu> {
                       Row(
                         children: [
                           AnimatedContainer(
-                            duration: Duration(seconds: 1),
+                            duration: const Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
                                 index == currentIndex ? displayWidth * .03 : 20,
@@ -151,4 +173,11 @@ class FooterMenuState extends State<FooterMenu> {
     'Order',
     'Wishlist',
   ];
+
+  List<Widget> pages = [
+    Home_Screen(),
+    Cart_Screen(),
+    Order_Screen(),
+    Wishlist_Screen(),
+];
 }

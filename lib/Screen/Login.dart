@@ -7,7 +7,6 @@ import 'package:your_cart/Components/my_textfield.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/Welcome.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -35,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
       password: passwordController.text,
     )
         .then((value) {
-      Navigator.pushReplacementNamed(context, "homepage");
+      Navigator.pushReplacementNamed(context, "footer_menu");
     }).onError((error, stackTrace) {
       debugPrint("error");
     });
@@ -44,7 +43,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     double height_c = MediaQuery.of(context).size.height;
-    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: [

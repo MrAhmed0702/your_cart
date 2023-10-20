@@ -1,17 +1,17 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:your_cart/Screen/Footer_Menu.dart';
 // import 'package:your_cart/Screen/Welcome.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Home_Screen extends StatefulWidget {
+  const Home_Screen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  // ignore: library_private_types_in_public_api
+  _Home_ScreenState createState() => _Home_ScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _Home_ScreenState extends State<Home_Screen> {
   @override
   Widget build(BuildContext context) {
     double height_c = MediaQuery.of(context).size.height;
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                      Positioned(
+                      const Positioned(
                         left: 26,
                         top: 89,
                         child: SizedBox(
@@ -340,7 +340,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Add your button's onPressed logic here
+                      
                     },
                     child: const Text(
                       'More',
@@ -353,10 +353,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  FooterMenu()
+                  
                 ],
               ),
             ),
+            
           ],
         ),
       ),
