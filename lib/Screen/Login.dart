@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
       password: passwordController.text,
     )
         .then((value) {
-      Navigator.pushReplacementNamed(context, "homepage");
+      Navigator.pushReplacementNamed(context, "footer_menu");
     }).onError((error, stackTrace) {
       debugPrint("error");
     });
@@ -43,7 +43,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     double height_c = MediaQuery.of(context).size.height;
-    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: [

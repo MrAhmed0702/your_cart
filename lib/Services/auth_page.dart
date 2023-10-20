@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/Footer_Menu.dart';
 import 'package:your_cart/Screen/Login.dart';
 
 class AuthPage extends StatefulWidget {
@@ -18,7 +18,7 @@ class _AuthPageState extends State<AuthPage> {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomePage();
+            return FooterMenu();
           } else {
             return LoginPage();
           }

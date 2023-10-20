@@ -9,7 +9,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(const Duration(milliseconds: 1000), () {
       Navigator.pushReplacementNamed(context, '/splash2');
     });
   }
@@ -26,13 +26,13 @@ class _SplashScreen1State extends State<SplashScreen1> {
               child: Container(
                 width: 100,
                 height: 100,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Color(0xFF8D85FF),
                   shape: CircleBorder(),
                 ),
               ),
             ),
-            Center(
+            const Center(
               // left: 184,
               // top: 448,
               child: Text(

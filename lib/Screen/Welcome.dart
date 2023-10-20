@@ -7,7 +7,6 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height_c = MediaQuery.of(context).size.height;
-    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFF5125D2),
       body: SingleChildScrollView(
