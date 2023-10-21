@@ -471,7 +471,90 @@ class _Home_ScreenState extends State<Home_Screen> {
                           child: Column(
                             children: [
                               Image.asset(
-                                "images/Product_Page/Synthetic_Mask.png",
+                                "images/Product_Page/Printed_tshirt.png",
+                                width: 148,
+                                height: 148,
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              const Text(
+                                "Loose Fit Graphic Print Crew-Neck T-Shirt",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "\u{20B9} 1500.00",
+                                    style: TextStyle(
+                                      color: Color(0xFF5125D2),
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 19,
+                                    backgroundColor:
+                                        const Color.fromRGBO(81, 37, 210, 1),
+                                    child: IconButton(
+                                      icon: const Icon(
+                                          Icons.favorite_border_outlined,
+                                          size: 23),
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      onPressed: () {},
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 23),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        width: MediaQuery.of(context).size.width * 0.41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                                Border.all(color: Colors.blueAccent, width: 2)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/Product_Page/Red_Circular_Frame.png",
                                 width: 148,
                                 height: 148,
                               ),
@@ -479,7 +562,80 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 height: 20,
                               ),
                               const Text(
-                                "Synthetics Mask",
+                                "Red circular Frame",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0.10,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "\u{20B9} 1500.00",
+                                    style: TextStyle(
+                                      color: Color(0xFF5125D2),
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 19,
+                                    backgroundColor:
+                                        const Color.fromRGBO(81, 37, 210, 1),
+                                    child: IconButton(
+                                      icon: const Icon(
+                                          Icons.favorite_border_outlined,
+                                          size: 23),
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      onPressed: () {},
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 23, right: 22),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.28,
+                        width: MediaQuery.of(context).size.width * 0.41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                                Border.all(color: Colors.blueAccent, width: 2)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/Product_Page/Blue_Aviator.png",
+                                width: 148,
+                                height: 148,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Blue Aviator",
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
@@ -552,21 +708,23 @@ class _Home_ScreenState extends State<Home_Screen> {
                           child: Column(
                             children: [
                               Image.asset(
-                                "images/Product_Page/Synthetic_Mask.png",
+                                "images/Product_Page/Black_leather_Strip_Mask.png",
                                 width: 148,
                                 height: 148,
                               ),
                               const SizedBox(
-                                height: 20,
+                                height: 2,
                               ),
                               const Text(
-                                "Synthetics Mask",
+                                "Black With Leather Strip Mask ",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontFamily: 'Poppins2',
                                   fontWeight: FontWeight.w600,
-                                  height: 0.10,
+                                  height: 0,
                                 ),
                               ),
                               const SizedBox(
@@ -625,21 +783,23 @@ class _Home_ScreenState extends State<Home_Screen> {
                           child: Column(
                             children: [
                               Image.asset(
-                                "images/Product_Page/Synthetic_Mask.png",
+                                "images/Product_Page/Rayben_Blue)Aviator.png",
                                 width: 148,
                                 height: 148,
                               ),
                               const SizedBox(
-                                height: 20,
+                                height: 2,
                               ),
                               const Text(
-                                "Synthetics Mask",
+                                "Ray-Ban Unisex Gradient Blue Lens Aviator",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontFamily: 'Poppins2',
                                   fontWeight: FontWeight.w600,
-                                  height: 0.10,
+                                  height: 0,
                                 ),
                               ),
                               const SizedBox(
@@ -650,7 +810,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   const Text(
-                                    "\u{20B9} 250.00",
+                                    "\u{20B9} 1200.00",
                                     style: TextStyle(
                                       color: Color(0xFF5125D2),
                                       fontSize: 15,
