@@ -399,8 +399,6 @@ class _Home_ScreenState extends State<Home_Screen> {
                             children: [
                               Image.asset(
                                 "images/Product_Page/Synthetic_Mask.png",
-                                width: 148,
-                                height: 148,
                               ),
                               const SizedBox(
                                 height: 20,
