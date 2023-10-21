@@ -118,44 +118,52 @@ class _Home_ScreenState extends State<Home_Screen> {
                           ),
                         ],
                       ),
-                      const Positioned(
-                        left: 26,
-                        top: 89,
-                        child: SizedBox(
-                          width: 372,
-                          child: Text(
-                            'Discover Your Perfect Style, One Click at a Time.',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w600,
-                              height: 0,
+                      const Stack(
+                        children: [
+                          Positioned(
+                            left: 26,
+                            top: 89,
+                            child: SizedBox(
+                              width: 372,
+                              child: Text(
+                                'Discover Your Perfect Style, One Click at a Time.',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
                       // Other Positioned widgets and their child widgets follow...
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 258, 0, 0),
                         child: Column(
                           children: [
-                            Positioned(
-                              // left: 30,
-                              // top: 258,
-                              child: CircleAvatar(
-                                radius: 30,
-                                backgroundColor:
-                                    const Color.fromRGBO(107, 69, 217, 1),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                    'images/lens_icon.svg',
+                            Stack(
+                              children: [
+                                Positioned(
+                                  // left: 30,
+                                  // top: 258,
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor:
+                                        const Color.fromRGBO(107, 69, 217, 1),
+                                    child: IconButton(
+                                      icon: SvgPicture.asset(
+                                        'images/lens_icon.svg',
+                                      ),
+                                      iconSize: 48,
+                                      color: Colors.white,
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  iconSize: 48,
-                                  color: Colors.white,
-                                  onPressed: () {},
                                 ),
-                              ),
+                              ],
                             ),
                             const SizedBox(
                               height: 5,
@@ -177,20 +185,24 @@ class _Home_ScreenState extends State<Home_Screen> {
                         padding: const EdgeInsets.fromLTRB(99, 258, 0, 0),
                         child: Column(
                           children: [
-                            Positioned(
-                              child: CircleAvatar(
-                                radius: 30,
-                                backgroundColor:
-                                    const Color.fromRGBO(107, 69, 217, 1),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                    'images/mask_icon.svg',
+                            Stack(
+                              children: [
+                                Positioned(
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor:
+                                        const Color.fromRGBO(107, 69, 217, 1),
+                                    child: IconButton(
+                                      icon: SvgPicture.asset(
+                                        'images/mask_icon.svg',
+                                      ),
+                                      iconSize: 48,
+                                      color: Colors.white,
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  iconSize: 48,
-                                  color: Colors.white,
-                                  onPressed: () {},
                                 ),
-                              ),
+                              ],
                             ),
                             const SizedBox(
                               height: 5,
@@ -212,22 +224,26 @@ class _Home_ScreenState extends State<Home_Screen> {
                         padding: const EdgeInsets.fromLTRB(172, 258, 0, 0),
                         child: Column(
                           children: [
-                            Positioned(
-                              // left: 30,
-                              // top: 258,
-                              child: CircleAvatar(
-                                radius: 30,
-                                backgroundColor:
-                                    const Color.fromRGBO(107, 69, 217, 1),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                    'images/t-shirt_icon.svg',
+                            Stack(
+                              children: [
+                                Positioned(
+                                  // left: 30,
+                                  // top: 258,
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor:
+                                        const Color.fromRGBO(107, 69, 217, 1),
+                                    child: IconButton(
+                                      icon: SvgPicture.asset(
+                                        'images/t-shirt_icon.svg',
+                                      ),
+                                      iconSize: 48,
+                                      color: Colors.white,
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  iconSize: 48,
-                                  color: Colors.white,
-                                  onPressed: () {},
                                 ),
-                              ),
+                              ],
                             ),
                             const SizedBox(
                               height: 5,
@@ -249,22 +265,26 @@ class _Home_ScreenState extends State<Home_Screen> {
                         padding: const EdgeInsets.fromLTRB(245, 258, 0, 0),
                         child: Column(
                           children: [
-                            Positioned(
-                              // left: 30,
-                              // top: 258,
-                              child: CircleAvatar(
-                                radius: 30,
-                                backgroundColor:
-                                    const Color.fromRGBO(107, 69, 217, 1),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                    'images/shirt_icon.svg',
+                            Stack(
+                              children: [
+                                Positioned(
+                                  // left: 30,
+                                  // top: 258,
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor:
+                                        const Color.fromRGBO(107, 69, 217, 1),
+                                    child: IconButton(
+                                      icon: SvgPicture.asset(
+                                        'images/shirt_icon.svg',
+                                      ),
+                                      iconSize: 48,
+                                      color: Colors.white,
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  iconSize: 48,
-                                  color: Colors.white,
-                                  onPressed: () {},
                                 ),
-                              ),
+                              ],
                             ),
                             const SizedBox(
                               height: 5,
@@ -286,22 +306,26 @@ class _Home_ScreenState extends State<Home_Screen> {
                         padding: const EdgeInsets.fromLTRB(318, 258, 0, 0),
                         child: Column(
                           children: [
-                            Positioned(
-                              // left: 30,
-                              // top: 258,
-                              child: CircleAvatar(
-                                radius: 30,
-                                backgroundColor:
-                                    const Color.fromRGBO(107, 69, 217, 1),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                    'images/more_icon.svg',
+                            Stack(
+                              children: [
+                                Positioned(
+                                  // left: 30,
+                                  // top: 258,
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor:
+                                        const Color.fromRGBO(107, 69, 217, 1),
+                                    child: IconButton(
+                                      icon: SvgPicture.asset(
+                                        'images/more_icon.svg',
+                                      ),
+                                      iconSize: 48,
+                                      color: Colors.white,
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  iconSize: 48,
-                                  color: Colors.white,
-                                  onPressed: () {},
                                 ),
-                              ),
+                              ],
                             ),
                             const SizedBox(
                               height: 5,
@@ -504,6 +528,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
