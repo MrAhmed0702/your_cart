@@ -141,6 +141,33 @@ class _Home_ScreenState extends State<Home_Screen> {
                           ),
                         ],
                       ),
+
+                      Positioned(
+                        left: 16,
+                        top: 180, // Adjust the top position as needed
+                        child: Container(
+                          width: 362,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              contentPadding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              hintText: 'Search product',
+                              hintStyle: TextStyle(color: Color(0xFF673EE5)),
+                              border: InputBorder.none,
+                            ),
+                            style: TextStyle(
+                              color: Color(0xFF673EE5),
+                              fontFamily: 'Poppins2',
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
                       // Other Positioned widgets and their child widgets follow...
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 258, 0, 0),
