@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         "homepage": (context) => const Home_Screen(),
         "forgotpassword": (context) => const ForgotPasswordPage(),
         "authpage": (context) => const AuthPage(),
-        "footer_menu" : (context) =>  FooterMenu(),
+        "footer_menu": (context) => FooterMenu(),
       },
     );
   }

@@ -27,10 +27,13 @@ class _Cart_ScreenState extends State<Cart_Screen> {
 
   @override
   Widget build(BuildContext context) {
+    double height_c = MediaQuery.of(context).size.height;
+    double width_c = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        centerTitle: true,
+        // centerTitle: true,
         elevation: 0.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,135 +214,7 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         ),
                         height: 120,
                       ),
-                      // const SizedBox(
-                      //   height: 22,
-                      // ),
-
-                      // Container(
-                      //   decoration: BoxDecoration(
-                      //       borderRadius: BorderRadius.circular(20),
-                      //       color: Color(0xFF5125D2)),
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.fromLTRB(12,0,0,0),
-                      //     child: Row(
-                      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      //       children: [
-                      //         Image.asset(
-                      //           "images/Product_Page/Synthetic_Mask.png",
-                      //           width: 100,
-                      //           height: 100,
-                      //         ),
-                      //         Padding(
-                      //           padding: const EdgeInsets.fromLTRB(5,10,0,0),
-                      //           child: Column(
-                      //             mainAxisAlignment: MainAxisAlignment.start,
-                      //             crossAxisAlignment: CrossAxisAlignment.start,
-                      //             children: [
-                      //               Text(
-                      //                 "Synthetics Mask",
-                      //                 style: TextStyle(
-                      //                   color: Colors.white,
-                      //                   fontSize: 20,
-                      //                   fontFamily: 'Poppins2',
-                      //                   fontWeight: FontWeight.w500,
-                      //                 ),
-                      //               ),
-                      //               Text(
-                      //                 "Size : Free Size",
-                      //                 style: TextStyle(
-                      //                   color: Color(0xFFBCC1CD),
-                      //                   fontSize: 14,
-                      //                   fontFamily: 'Poppins2',
-                      //                   fontWeight: FontWeight.w500,
-                      //                   height: 0,
-                      //                 ),
-                      //               ),
-                      //               Text(
-                      //                 "\u{20B9} 250.0",
-                      //                 style: TextStyle(
-                      //                   color: Colors.white,
-                      //                   fontSize: 20,
-                      //                   fontFamily: 'Poppins2',
-                      //                   fontWeight: FontWeight.w600,
-                      //                   height: 0,
-                      //                 ),
-                      //               )
-                      //             ],
-                      //           ),
-                      //         ),
-                      //         Padding(
-                      //           padding: const EdgeInsets.fromLTRB(0, 0, 5, 29),
-                      //           child: Column(
-                      //             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      //             crossAxisAlignment: CrossAxisAlignment.end,
-                      //             children: [
-                      //               IconButton(
-                      //                 icon: SvgPicture.asset(
-                      //                   'images/delete_icon.svg',
-                      //                 ),
-                      //                 onPressed: () {},
-                      //                 color: Colors.white,
-                      //               ),
-                      //               Row(
-                      //                 mainAxisAlignment:
-                      //                     MainAxisAlignment.spaceEvenly,
-                      //                 children: [
-                      //                   SizedBox(
-                      //                     width: 25,
-                      //                     height: 25,
-                      //                     child: FittedBox(
-                      //                       child: FloatingActionButton(
-                      //                         onPressed: minus,
-                      //                         child: Icon(
-                      //                           // const IconData(0xe15b,
-                      //                           //     fontFamily: 'Poppins2'),
-                      //                           Icons.remove,
-                      //                           color: Color.fromRGBO(81, 37, 210, 1),
-                      //                           size: 40,
-                      //                         ),
-                      //                         backgroundColor: Colors.white,
-                      //                       ),
-                      //                     ),
-                      //                   ),
-                      //                   SizedBox(
-                      //                     width: 7.8,
-                      //                   ),
-                      //                   Text('$_n',
-                      //                       style: TextStyle(
-                      //                         color: Colors.white,
-                      //                         fontSize: 16,
-                      //                         fontFamily: 'Poppins',
-                      //                         fontWeight: FontWeight.w600,
-                      //                         height: 0,
-                      //                       )),
-                      //                   SizedBox(
-                      //                     width: 7.8,
-                      //                   ),
-                      //                   SizedBox(
-                      //                     width: 25,
-                      //                     height: 25,
-                      //                     child: FittedBox(
-                      //                       child: FloatingActionButton(
-                      //                         onPressed: add,
-                      //                         child: Icon(
-                      //                           Icons.add,
-                      //                           color: Color.fromRGBO(81, 37, 210, 1),
-                      //                           size: 40,
-                      //                         ),
-                      //                         backgroundColor: Colors.white,
-                      //                       ),
-                      //                     ),
-                      //                   ),
-                      //                 ],
-                      //               ),
-                      //             ],
-                      //           ),
-                      //         ),
-                      //       ],
-                      //     ),
-                      //   ),
-                      //   height: 120,
-                      // ),
+                      
                       SizedBox(height: 330,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -415,6 +290,7 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
                           Text(
                             "Total ",
                             style: TextStyle(
@@ -424,6 +300,7 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                               fontWeight: FontWeight.w400,
                               height: 0,
                             ),
+
                           ),
                           Text(
                             "\u{20B9} 350",

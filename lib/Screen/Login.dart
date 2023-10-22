@@ -2,12 +2,14 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:your_cart/Components/CircleAvatar.dart';
 import 'package:your_cart/Components/my_button.dart';
 import 'package:your_cart/Components/my_textfield.dart';
+import 'package:your_cart/Screen/Footer_Menu.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/Welcome.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -41,14 +43,25 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
- Future<void> signInWithGoogle() async {
-  try{
+  signInWithGoogle() async {
+    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-  } on FirebaseAuthException catch(e){
-    
+    GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+
+    UserCredential userCredential =
+        await FirebaseAuth.instance.signInWithCredential(credential);
+    print(userCredential.user?.displayName);
+
+    if (userCredential.user != null) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => FooterMenu()));
+    } else {
+      return LoginPage();
+    }
   }
-
-}
 
   @override
   Widget build(BuildContext context) {
@@ -228,11 +241,12 @@ class _LoginPageState extends State<LoginPage> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CircleAvatar(
-                                      radius: 40,
-                                      backgroundColor: Colors.white,
-                                      child: Image.asset('images/google.png'),
-                                    ),
+                                    ClickableCircleAvatar(
+                                        onPressed: () {
+                                          signInWithGoogle();
+                                        },
+                                        image:
+                                            Image.asset('images/google.png')),
                                     SizedBox(
                                       width: 10,
                                     ),
