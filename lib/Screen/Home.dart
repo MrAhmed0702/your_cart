@@ -382,7 +382,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Treding Product",
+                    "Trending Product",
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
