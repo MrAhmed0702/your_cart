@@ -1,4 +1,6 @@
 // ignore: file_names
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:your_cart/Screen/Welcome.dart';
@@ -74,11 +76,11 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 ),
                               ),
                               const SizedBox(width: 2),
-                              const SizedBox(
+                              Container(
                                 width: 132,
                                 height: 20,
                                 child: Text(
-                                  'Hello, James',
+                                  'Namasta, User',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
@@ -87,7 +89,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                     height: 0,
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           SizedBox(

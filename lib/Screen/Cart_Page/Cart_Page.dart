@@ -24,10 +24,13 @@ class _Cart_ScreenState extends State<Cart_Screen> {
 
   @override
   Widget build(BuildContext context) {
+    double height_c = MediaQuery.of(context).size.height;
+    double width_c = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        centerTitle: true,
+        // centerTitle: true,
         elevation: 0.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,8 +128,8 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         children: [
                           IconButton(
                             icon: SvgPicture.asset(
-                  'images/delete_icon.svg',
-                ),
+                              'images/delete_icon.svg',
+                            ),
                             onPressed: () {},
                             color: Colors.white,
                           ),

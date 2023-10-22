@@ -35,14 +35,13 @@ class FooterMenuState extends State<FooterMenu> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     double displayWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body :PageView(
+      body: PageView(
         controller: _pageController,
-        children: pages, 
+        children: pages,
         onPageChanged: (int index) {
           setState(() {
             currentIndex = index;
@@ -70,7 +69,7 @@ class FooterMenuState extends State<FooterMenu> {
           itemBuilder: (context, index) => InkWell(
             onTap: () {
               setState(() {
-              changePage(index);
+                changePage(index);
                 HapticFeedback.lightImpact();
               });
             },
@@ -179,5 +178,5 @@ class FooterMenuState extends State<FooterMenu> {
     Cart_Screen(),
     Order_Screen(),
     Wishlist_Screen(),
-];
+  ];
 }

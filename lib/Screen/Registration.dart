@@ -31,7 +31,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   FirebaseFirestore instance = FirebaseFirestore.instance;
   FirebaseAuth auth = FirebaseAuth.instance;
-  Future<void> signUpUser(String email, String password) async {
+  Future<void> signUpUser(
+      String email, String password, BuildContext context) async {
     auth
         .createUserWithEmailAndPassword(email: email, password: password)
         .then((value) async {
@@ -299,7 +300,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                             confirmPasswordController.text) ==
                                         0) {
                                       signUpUser(emailController.text,
-                                          passwordController.text);
+                                          passwordController.text, context);
                                     } else {
                                       print("Password not matching");
                                     }
