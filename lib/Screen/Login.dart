@@ -7,6 +7,7 @@ import 'package:your_cart/Components/my_textfield.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/Welcome.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -39,6 +40,15 @@ class _LoginPageState extends State<LoginPage> {
       debugPrint("error");
     });
   }
+
+ Future<void> signInWithGoogle() async {
+  try{
+
+  } on FirebaseAuthException catch(e){
+    
+  }
+
+}
 
   @override
   Widget build(BuildContext context) {
@@ -260,5 +270,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-class GoogleSignInAccount {}
