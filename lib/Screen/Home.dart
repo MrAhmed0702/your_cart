@@ -49,11 +49,6 @@ class _Home_ScreenState extends State<Home_Screen> {
     double height_c = MediaQuery.of(context).size.height;
     double width_c = MediaQuery.of(context).size.width;
 
-    // for (var product in products) {
-    //   product['price'] ??=
-    //       '\u{20B9} 0.00'; // Set a default price if 'price' is null
-    // }
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -462,7 +457,6 @@ class _Home_ScreenState extends State<Home_Screen> {
                 itemCount: products.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    // padding: const EdgeInsets.all(8.0),
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: Column(
                       children: [
