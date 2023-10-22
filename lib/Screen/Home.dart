@@ -377,7 +377,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 23, right: 22),
+              padding: const EdgeInsets.only(left: 23, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -421,7 +421,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border:
-                                Border.all(color: Colors.blueAccent, width: 2)),
+                                Border.all(color: Color(0xFF673EE5), width: 2)),
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
@@ -492,7 +492,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border:
-                                Border.all(color: Colors.blueAccent, width: 2)),
+                                Border.all(color: Color(0xFF673EE5), width: 2)),
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
@@ -575,7 +575,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border:
-                                Border.all(color: Colors.blueAccent, width: 2)),
+                                Border.all(color: Color(0xFF673EE5), width: 2)),
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
@@ -648,7 +648,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border:
-                                Border.all(color: Colors.blueAccent, width: 2)),
+                                Border.all(color: Color(0xFF673EE5), width: 2)),
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
@@ -729,7 +729,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border:
-                                Border.all(color: Colors.blueAccent, width: 2)),
+                                Border.all(color: Color(0xFF673EE5), width: 2)),
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
@@ -804,7 +804,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border:
-                                Border.all(color: Colors.blueAccent, width: 2)),
+                                Border.all(color: Color(0xFF673EE5), width: 2)),
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
