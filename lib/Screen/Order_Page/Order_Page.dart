@@ -15,6 +15,7 @@ class _Order_ScreenState extends State<Order_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         centerTitle: true,
         elevation: 0.0,

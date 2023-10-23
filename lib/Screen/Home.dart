@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:your_cart/Screen/Product_Description_Page.dart/Product_des_page.dart';
+import 'package:your_cart/Screen/Profile/Profile_Screen.dart';
 // import 'package:your_cart/Screen/Welcome.dart';
 
 class Home_Screen extends StatefulWidget {
@@ -98,7 +101,13 @@ class _Home_ScreenState extends State<Home_Screen> {
                                           iconSize: 96,
                                           color: const Color.fromARGB(
                                               255, 255, 255, 255),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (BuildContext
+                                                            context) =>
+                                                        Profile_User_Screen()));
+                                          },
                                         ),
                                       ),
                                     ),
@@ -106,7 +115,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 ),
                               ),
                               const SizedBox(width: 2),
-                              Container(
+                              const SizedBox(
                                 width: 132,
                                 height: 20,
                                 child: Text(
@@ -184,10 +193,10 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(24),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      horizontal: 16),
+                                  contentPadding:
+                                      EdgeInsets.symmetric(horizontal: 16),
                                   hintText: 'Search product',
                                   hintStyle:
                                       TextStyle(color: Color(0xFF673EE5)),
@@ -449,10 +458,10 @@ class _Home_ScreenState extends State<Home_Screen> {
             SizedBox(
               height: height_c * 1,
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, // Two items in each row
                   childAspectRatio:
-                      0.75, // You can adjust this ratio for the item's height
+                      0.70, // You can adjust this ratio for the item's height
                 ),
                 itemCount: products.length,
                 itemBuilder: (context, index) {
@@ -461,12 +470,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                     child: Column(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.28,
+                          height: MediaQuery.of(context).size.height * 0.32,
                           width: MediaQuery.of(context).size.width * 0.41,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
-                            border:
-                                Border.all(color: Color(0xFF673EE5), width: 2),
+                            border: Border.all(
+                                color: const Color(0xFF673EE5), width: 2),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -477,17 +486,26 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   width: 148,
                                   height: 148,
                                 ),
-                                const SizedBox(height: 2),
-                                Text(
-                                  products[index]["name"],
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Poppins2',
-                                    fontWeight: FontWeight.w600,
+                                const SizedBox(height: 0),
+                                TextButton(
+                                  child: Text(
+                                    products[index]["name"],
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontFamily: 'Poppins2',
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Product_Description()),
+                                    );
+                                  },
                                 ),
                                 const SizedBox(height: 10),
                                 Row(
@@ -496,7 +514,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   children: [
                                     Text(
                                       products[index]['price'],
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Color(0xFF5125D2),
                                         fontSize: 15,
                                         fontFamily: 'Poppins',
