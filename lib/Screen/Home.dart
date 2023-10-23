@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:your_cart/Screen/Welcome.dart';
@@ -11,6 +12,8 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
+  final users = FirebaseAuth.instance.currentUser!;
+
   final List<Map<String, dynamic>> products = [
     {
       'imagePath': 'images/Product_Page/Synthetic_Mask.png',
@@ -110,7 +113,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 width: 132,
                                 height: 20,
                                 child: Text(
-                                  'Namasta, User',
+                                  'Namasta, ',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
