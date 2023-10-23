@@ -53,9 +53,9 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
   @override
   Widget build(BuildContext context) {
     double height_c = MediaQuery.of(context).size.height;
-    double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           centerTitle: true,
           elevation: 0.0,

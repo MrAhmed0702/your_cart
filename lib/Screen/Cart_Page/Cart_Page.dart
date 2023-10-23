@@ -3,14 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+
 class Cart_Screen extends StatefulWidget {
   const Cart_Screen({Key? key});
+  
 
   @override
   State<Cart_Screen> createState() => _Cart_ScreenState();
 }
 
 class _Cart_ScreenState extends State<Cart_Screen> {
+  
+  
   int _n = 0;
 
   void minus() {
@@ -32,6 +36,7 @@ class _Cart_ScreenState extends State<Cart_Screen> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         // centerTitle: true,
         elevation: 0.0,
