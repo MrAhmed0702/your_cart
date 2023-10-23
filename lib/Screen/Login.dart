@@ -35,8 +35,7 @@ class _LoginPageState extends State<LoginPage> {
         .signInWithEmailAndPassword(
       email: emailController.text,
       password: passwordController.text,
-    )
-        .then((value) {
+    ).then((value) {
       Navigator.pushReplacementNamed(context, "footer_menu");
     }).onError((error, stackTrace) {
       debugPrint("error");
