@@ -19,32 +19,32 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
 
   final List<Map<String, dynamic>> products = [
     {
-      'imagePath': 'images/Product_Page/Synthetic_Mask.png',
+      'imagePath': 'images/Product_Page/1.png',
       'name': 'Synthetics Mask',
       'price': '\u{20B9} 250.00',
     },
     {
-      'imagePath': 'images/Product_Page/Printed_tshirt.png',
+      'imagePath': 'images/Product_Page/2.png',
       'name': 'Loose Fit Graphic',
       'price': '\u{20B9} 1500.00',
     },
     {
-      'imagePath': 'images/Product_Page/Red_Circular_Frame.png',
+      'imagePath': 'images/Product_Page/3.png',
       'name': 'Red Circular Frame',
       'price': '\u{20B9} 1100.00',
     },
     {
-      'imagePath': 'images/Product_Page/blue_lens_aviator.png',
+      'imagePath': 'images/Product_Page/4.png',
       'name': 'Blue Aviator',
       'price': '\u{20B9} 850.00',
     },
     {
-      'imagePath': 'images/Product_Page/Black_leather_Strip_Mask.png',
+      'imagePath': 'images/Product_Page/5.png',
       'name': 'Leathered Black Masked',
       'price': '\u{20B9} 469.00',
     },
     {
-      'imagePath': 'images/Product_Page/Rayben_Blue)Aviator.png',
+      'imagePath': 'images/Product_Page/6.png',
       'name': 'Ray-Ban Unisex Glasses',
       'price': '\u{20B9} 1200.00',
     },
@@ -161,18 +161,15 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
                                   child: IconButton(
                                     icon: Icon(
                                       isFavorite
-                                          ? Icons
-                                              .favorite 
-                                          : Icons
-                                              .favorite_border, 
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
                                       size: 23,
                                     ),
                                     color: isFavorite
-                                        ? const Color.fromARGB(255, 255, 255, 255)
-                                        : Colors
-                                            .white, 
-                                    onPressed:
-                                        toggleFavorite,
+                                        ? const Color.fromARGB(
+                                            255, 255, 255, 255)
+                                        : Colors.white,
+                                    onPressed: toggleFavorite,
                                   ),
                                 ),
                               ],

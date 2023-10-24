@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:your_cart/Screen/Product_Description_Page.dart/Product_des_page.dart';
+// import 'package:your_cart/Components/ProductWidget.dart';
+import 'package:your_cart/Components/ProductWidgetTest.dart';
 import 'package:your_cart/Screen/Profile/Profile_Screen.dart';
 // import 'package:your_cart/Screen/Welcome.dart';
 
@@ -16,38 +17,38 @@ class Home_Screen extends StatefulWidget {
 class _Home_ScreenState extends State<Home_Screen> {
   final users = FirebaseAuth.instance.currentUser!;
 
-  final List<Map<String, dynamic>> products = [
-    {
-      'imagePath': 'images/Product_Page/Synthetic_Mask.png',
-      'name': 'Synthetics Mask',
-      'price': '\u{20B9} 250.00',
-    },
-    {
-      'imagePath': 'images/Product_Page/Printed_tshirt.png',
-      'name': 'Loose Fit Graphic',
-      'price': '\u{20B9} 1500.00',
-    },
-    {
-      'imagePath': 'images/Product_Page/Red_Circular_Frame.png',
-      'name': 'Red Circular Frame',
-      'price': '\u{20B9} 1100.00',
-    },
-    {
-      'imagePath': 'images/Product_Page/blue_lens_aviator.png',
-      'name': 'Blue Aviator',
-      'price': '\u{20B9} 850.00',
-    },
-    {
-      'imagePath': 'images/Product_Page/Black_leather_Strip_Mask.png',
-      'name': 'Leathered Black Masked',
-      'price': '\u{20B9} 469.00',
-    },
-    {
-      'imagePath': 'images/Product_Page/Rayben_Blue)Aviator.png',
-      'name': 'Ray-Ban Unisex Glasses',
-      'price': '\u{20B9} 1200.00',
-    },
-  ];
+  // final List<Map<String, dynamic>> products = [
+  //   {
+  //     'imagePath': 'images/Product_Page/Synthetic_Mask.png',
+  //     'name': 'Synthetics Mask',
+  //     'price': '\u{20B9} 250.00',
+  //   },
+  //   {
+  //     'imagePath': 'images/Product_Page/Printed_tshirt.png',
+  //     'name': 'Loose Fit Graphic',
+  //     'price': '\u{20B9} 1500.00',
+  //   },
+  //   {
+  //     'imagePath': 'images/Product_Page/Red_Circular_Frame.png',
+  //     'name': 'Red Circular Frame',
+  //     'price': '\u{20B9} 1100.00',
+  //   },
+  //   {
+  //     'imagePath': 'images/Product_Page/blue_lens_aviator.png',
+  //     'name': 'Blue Aviator',
+  //     'price': '\u{20B9} 850.00',
+  //   },
+  //   {
+  //     'imagePath': 'images/Product_Page/Black_leather_Strip_Mask.png',
+  //     'name': 'Leathered Black Masked',
+  //     'price': '\u{20B9} 469.00',
+  //   },
+  //   {
+  //     'imagePath': 'images/Product_Page/Rayben_Blue)Aviator.png',
+  //     'name': 'Ray-Ban Unisex Glasses',
+  //     'price': '\u{20B9} 1200.00',
+  //   },
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +122,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 width: 132,
                                 height: 20,
                                 child: Text(
-                                  'Namasta, ',
+                                  'Namasta, User',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
@@ -187,7 +188,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         children: [
                           Positioned(
                             left: 16,
-                            top: 180, // Adjust the top position as needed
+                            top: 180,
                             child: Container(
                               width: 362,
                               height: 50,
@@ -197,16 +198,17 @@ class _Home_ScreenState extends State<Home_Screen> {
                               ),
                               child: const TextField(
                                 decoration: InputDecoration(
-                                  contentPadding:
-                                      EdgeInsets.symmetric(horizontal: 16),
-                                  hintText: 'Search product',
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 10),
+                                  hintText: 'Search Product',
                                   hintStyle:
                                       TextStyle(color: Color(0xFF673EE5)),
                                   border: InputBorder.none,
-                                  // suffixIcon: Icon(
-                                  //   Icons.search,
-                                  //   color: Color(0xFF673EE5),
-                                  // ),
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    size: 30,
+                                    color: Color(0xFF673EE5),
+                                  ),
                                 ),
                                 style: TextStyle(
                                   color: Color(0xFF673EE5),
@@ -457,98 +459,101 @@ class _Home_ScreenState extends State<Home_Screen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: height_c * 1,
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Two items in each row
-                  childAspectRatio:
-                      0.70, // You can adjust this ratio for the item's height
-                ),
-                itemCount: products.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 8, right: 8),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.32,
-                          width: MediaQuery.of(context).size.width * 0.41,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            border: Border.all(
-                                color: const Color(0xFF673EE5), width: 2),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  products[index]['imagePath'],
-                                  width: 148,
-                                  height: 148,
-                                ),
-                                const SizedBox(height: 0),
-                                TextButton(
-                                  child: Text(
-                                    products[index]["name"],
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontFamily: 'Poppins2',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Product_Description()),
-                                    );
-                                  },
-                                ),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      products[index]['price'],
-                                      style: const TextStyle(
-                                        color: Color(0xFF5125D2),
-                                        fontSize: 15,
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    CircleAvatar(
-                                      radius: 19,
-                                      backgroundColor:
-                                          const Color.fromRGBO(81, 37, 210, 1),
-                                      child: IconButton(
-                                        icon: const Icon(
-                                          Icons.favorite_border_outlined,
-                                          size: 23,
-                                        ),
-                                        color: const Color.fromARGB(
-                                            255, 255, 255, 255),
-                                        onPressed: () {},
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
+
+            ProductWidgetTest(),
+            // SizedBox(
+            //   height: height_c * 1,
+            //   child: GridView.builder(
+            //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //       crossAxisCount: 2, // Two items in each row
+            //       childAspectRatio:
+            //           0.70, // You can adjust this ratio for the item's height
+            //     ),
+            //     itemCount: products.length,
+            //     itemBuilder: (context, index) {
+            //       return Padding(
+            //         padding: const EdgeInsets.only(left: 8, right: 8),
+            //         child: Column(
+            //           children: [
+            //             Container(
+            //               height: MediaQuery.of(context).size.height * 0.32,
+            //               width: MediaQuery.of(context).size.width * 0.41,
+            //               decoration: BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(14),
+            //                 border: Border.all(
+            //                     color: const Color(0xFF673EE5), width: 2),
+            //               ),
+            //               child: Padding(
+            //                 padding: const EdgeInsets.all(8.0),
+            //                 child: Column(
+            //                   children: [
+            //                     Image.asset(
+            //                       products[index]['imagePath'],
+            //                       width: 148,
+            //                       height: 148,
+            //                     ),
+            //                     const SizedBox(height: 0),
+            //                     TextButton(
+            //                       child: Text(
+            //                         products[index]["name"],
+            //                         maxLines: 1,
+            //                         overflow: TextOverflow.ellipsis,
+            //                         style: const TextStyle(
+            //                           color: Colors.black,
+            //                           fontSize: 16,
+            //                           fontFamily: 'Poppins2',
+            //                           fontWeight: FontWeight.w600,
+            //                         ),
+            //                       ),
+            //                       onPressed: () {
+            //                         Navigator.push(
+            //                           context,
+            //                           MaterialPageRoute(
+            //                               builder: (context) =>
+            //                                   Product_Description()),
+            //                         );
+            //                       },
+            //                     ),
+            //                     const SizedBox(height: 10),
+            //                     Row(
+            //                       mainAxisAlignment:
+            //                           MainAxisAlignment.spaceBetween,
+            //                       children: [
+            //                         Text(
+            //                           products[index]['price'],
+            //                           style: const TextStyle(
+            //                             color: Color(0xFF5125D2),
+            //                             fontSize: 15,
+            //                             fontFamily: 'Poppins',
+            //                             fontWeight: FontWeight.w600,
+            //                           ),
+            //                         ),
+            //                         CircleAvatar(
+            //                           radius: 19,
+            //                           backgroundColor:
+            //                               const Color.fromRGBO(81, 37, 210, 1),
+            //                           child: IconButton(
+            //                             icon: const Icon(
+            //                               Icons.favorite_border_outlined,
+            //                               size: 23,
+            //                             ),
+            //                             color: const Color.fromARGB(
+            //                                 255, 255, 255, 255),
+            //                             onPressed: () {},
+            //                           ),
+            //                         )
+            //                       ],
+            //                     ),
+            //                   ],
+            //                 ),
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

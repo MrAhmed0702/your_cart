@@ -6,10 +6,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:your_cart/Components/CircleAvatar.dart';
 import 'package:your_cart/Components/my_button.dart';
 import 'package:your_cart/Components/my_textfield.dart';
-import 'package:your_cart/Screen/Footer_Menu.dart';
-import 'package:your_cart/Screen/ForgetPassword.dart';
-import 'package:your_cart/Screen/Registration.dart';
-import 'package:your_cart/Screen/Welcome.dart';
+import 'package:your_cart/Screen/Authentication_Pages/ForgetPassword.dart';
+import 'package:your_cart/Screen/Authentication_Pages/Registration.dart';
+import 'package:your_cart/Screen/BNB/Bottom_Navigation_Bar.dart';
+import 'package:your_cart/Screen/Splash_Screens%20and%20Welcome/Welcome.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -35,8 +35,9 @@ class _LoginPageState extends State<LoginPage> {
         .signInWithEmailAndPassword(
       email: emailController.text,
       password: passwordController.text,
-    ).then((value) {
-      Navigator.pushReplacementNamed(context, "footer_menu");
+    )
+        .then((value) {
+      Navigator.pushReplacementNamed(context, "bottom_navigation_bar");
     }).onError((error, stackTrace) {
       debugPrint("error");
     });
@@ -56,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
 
     if (userCredential.user != null) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => FooterMenu()));
+          .push(MaterialPageRoute(builder: (context) => BottomBar()));
     } else {
       return LoginPage();
     }

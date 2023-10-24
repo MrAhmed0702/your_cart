@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:your_cart/Screen/Cart_Page/Cart_Page.dart';
-import 'package:your_cart/Screen/Footer_Menu.dart';
-import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/BNB/Footer_Menu.dart';
 import 'package:your_cart/Screen/Order_Page/Order_Page.dart';
 import 'package:your_cart/Screen/Profile/user_profile.dart';
-import 'package:your_cart/Screen/Wishlist_Page/Wishlist_Page.dart';
 
 class Profile_User_Screen extends StatefulWidget {
   const Profile_User_Screen({super.key});
@@ -65,7 +62,9 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 10,)
+                  SizedBox(
+                    height: 10,
+                  )
                 ],
               ),
             ),
@@ -211,7 +210,10 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                   height: 50,
                   width: 372,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // FirebaseAuth.instance.signOut();
+                      // Navigator.pushReplacementNamed(context, "LoginPage");
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(81, 37, 210, 1),
                       shape: RoundedRectangleBorder(

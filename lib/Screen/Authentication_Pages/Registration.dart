@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:your_cart/Components/my_textfield.dart';
-import 'package:your_cart/Screen/Login.dart';
+import 'package:your_cart/Screen/Authentication_Pages/Login.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});

@@ -1,7 +1,9 @@
+// Shivam's BNB
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:your_cart/Screen/Cart_Page/Cart_Page.dart';
-import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/Home_Page/Home.dart';
 import 'package:your_cart/Screen/Order_Page/Order_Page.dart';
 import 'package:your_cart/Screen/Wishlist_Page/Wishlist_Page.dart';
 
@@ -91,7 +93,7 @@ class FooterMenuState extends State<FooterMenu> {
                     width: index == currentIndex ? displayWidth * .32 : 0,
                     decoration: BoxDecoration(
                       color: index == currentIndex
-                          ? Colors.blueAccent.withOpacity(.2)
+                          ? Colors.blueAccent.withOpacity(.1)
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(50),
                     ),
@@ -134,7 +136,7 @@ class FooterMenuState extends State<FooterMenu> {
                       Row(
                         children: [
                           AnimatedContainer(
-                            duration: const Duration(seconds: 1),
+                            duration: const Duration(milliseconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
                                 index == currentIndex ? displayWidth * .03 : 20,
