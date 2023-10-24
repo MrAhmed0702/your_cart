@@ -45,7 +45,6 @@ class MyApp extends StatelessWidget {
         "forgotpassword": (context) => const ForgotPasswordPage(),
         "authpage": (context) => const AuthPage(),
         "footer_menu": (context) => FooterMenu(),
-        // "product_des1" : (context) => Product_Description()
       },
     );
   }
