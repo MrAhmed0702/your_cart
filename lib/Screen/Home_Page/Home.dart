@@ -17,39 +17,6 @@ class Home_Screen extends StatefulWidget {
 class _Home_ScreenState extends State<Home_Screen> {
   final users = FirebaseAuth.instance.currentUser!;
 
-  // final List<Map<String, dynamic>> products = [
-  //   {
-  //     'imagePath': 'images/Product_Page/Synthetic_Mask.png',
-  //     'name': 'Synthetics Mask',
-  //     'price': '\u{20B9} 250.00',
-  //   },
-  //   {
-  //     'imagePath': 'images/Product_Page/Printed_tshirt.png',
-  //     'name': 'Loose Fit Graphic',
-  //     'price': '\u{20B9} 1500.00',
-  //   },
-  //   {
-  //     'imagePath': 'images/Product_Page/Red_Circular_Frame.png',
-  //     'name': 'Red Circular Frame',
-  //     'price': '\u{20B9} 1100.00',
-  //   },
-  //   {
-  //     'imagePath': 'images/Product_Page/blue_lens_aviator.png',
-  //     'name': 'Blue Aviator',
-  //     'price': '\u{20B9} 850.00',
-  //   },
-  //   {
-  //     'imagePath': 'images/Product_Page/Black_leather_Strip_Mask.png',
-  //     'name': 'Leathered Black Masked',
-  //     'price': '\u{20B9} 469.00',
-  //   },
-  //   {
-  //     'imagePath': 'images/Product_Page/Rayben_Blue)Aviator.png',
-  //     'name': 'Ray-Ban Unisex Glasses',
-  //     'price': '\u{20B9} 1200.00',
-  //   },
-  // ];
-
   @override
   Widget build(BuildContext context) {
     double height_c = MediaQuery.of(context).size.height;
