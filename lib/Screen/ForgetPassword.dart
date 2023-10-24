@@ -64,7 +64,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                               "Forgot Password ?",
                               style: TextStyle(
                                 fontFamily: "Poppins2",
-                                fontSize: 30,
+                                fontSize: 40,
                                 color: Colors.white,
                               ),
                             ),
@@ -77,7 +77,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           'Please Enter Your Registered Email To Recieve\nA link In Your Mail To Reset Your Password',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 14,
+                              fontSize: 18,
                               fontFamily: "Poppins2"),
                         ),
                         SizedBox(
@@ -110,7 +110,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(12),
+                                    Radius.circular(16),
                                   ),
                                 ),
                                 backgroundColor: Colors.white,
