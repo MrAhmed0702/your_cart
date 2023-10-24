@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:your_cart/Screen/Footer_Menu.dart';
+import 'package:your_cart/Screen/Product_Description_Page.dart/Product_des_page.dart';
 
 class Wishlist_Screen extends StatefulWidget {
   const Wishlist_Screen({super.key});
@@ -48,6 +50,16 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
       'name': 'Ray-Ban Unisex Glasses',
       'price': '\u{20B9} 1200.00',
     },
+    {
+      'imagePath': 'images/Product_Page/blue_lens_aviator.png',
+      'name': 'Blue Aviator',
+      'price': '\u{20B9} 850.00',
+    },
+    {
+      'imagePath': 'images/Product_Page/Black_leather_Strip_Mask.png',
+      'name': 'Leathered Black Masked',
+      'price': '\u{20B9} 469.00',
+    },
   ];
 
   @override
@@ -71,7 +83,13 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
                   ),
                   iconSize: 96,
                   color: const Color.fromARGB(255, 255, 255, 255),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        FooterMenu()));
+                  },
                 ),
               ),
               const Text(
@@ -98,13 +116,14 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
             ],
           ),
         ),
+        
         body: SizedBox(
           height: height_c * 1,
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, // Two items in each row
               childAspectRatio:
-                  0.75, // You can adjust this ratio for the item's height
+                  0.85, // You can adjust this ratio for the item's height
             ),
             itemCount: products.length,
             itemBuilder: (context, index) {
@@ -114,7 +133,7 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
                 child: Column(
                   children: [
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.29,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       width: MediaQuery.of(context).size.width * 0.41,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
@@ -130,16 +149,25 @@ class _Wishlist_ScreenState extends State<Wishlist_Screen> {
                               height: 148,
                             ),
                             const SizedBox(height: 2),
-                            Text(
-                              products[index]["name"],
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'Poppins2',
-                                fontWeight: FontWeight.w600,
+                            TextButton(
+                              child: Text(
+                                products[index]["name"],
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
+                              onPressed: (){
+                                Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        Product_Description()));
+                              },
                             ),
                             const SizedBox(height: 10),
                             Row(

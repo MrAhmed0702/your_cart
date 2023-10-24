@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:your_cart/Components/Cloth_selector.dart';
+import 'package:your_cart/Screen/Footer_Menu.dart';
 
 class Product_Description extends StatefulWidget {
   const Product_Description({super.key});
@@ -17,9 +18,6 @@ class _Product_DescriptionState extends State<Product_Description> {
   List<String> _images = [
     'images/Product_Page/mask_1.png',
     'images/Product_Page/mask_2.png',
-    // 'https://images.pexels.com/photos/7780128/pexels-photo-7780128.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    // 'https://images.pexels.com/photos/7573942/pexels-photo-7573942.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    // 'https://images.pexels.com/photos/3390587/pexels-photo-3390587.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
   ];
 
   @override
@@ -39,17 +37,18 @@ class _Product_DescriptionState extends State<Product_Description> {
 
     int _n = 0;
 
+    void add() {
+      setState(() {
+        _n++;
+      });
+    }
+
     void minus() {
       setState(() {
         if (_n != 0) _n--;
       });
     }
 
-    void add() {
-      setState(() {
-        _n++;
-      });
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -81,7 +80,13 @@ class _Product_DescriptionState extends State<Product_Description> {
                 ),
                 iconSize: 96,
                 color: const Color.fromARGB(255, 255, 255, 255),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        FooterMenu()));
+                },
               ),
             ),
           ],
@@ -145,7 +150,7 @@ class _Product_DescriptionState extends State<Product_Description> {
                     'Price',
                     style: TextStyle(
                       color: Color(0xFFBCC1CD),
-                      fontSize: 15,
+                      fontSize: 18,
                       fontFamily: 'Poppins2',
                       fontWeight: FontWeight.w500,
                       height: 0,
@@ -161,7 +166,7 @@ class _Product_DescriptionState extends State<Product_Description> {
                         '₹ 250.00',
                         style: TextStyle(
                           color: Color(0xFF5125D2),
-                          fontSize: 23,
+                          fontSize: 26,
                           fontFamily: 'Poppins2',
                           fontWeight: FontWeight.w600,
                           height: 0,
@@ -172,8 +177,8 @@ class _Product_DescriptionState extends State<Product_Description> {
                     //   width: 11,
                     // ),
                     Container(
-                      width: 42,
-                      height: 18,
+                      width: 75,
+                      height: 24,
                       decoration: ShapeDecoration(
                         color: const Color(0xFF5125D2),
                         shape: RoundedRectangleBorder(
@@ -185,7 +190,7 @@ class _Product_DescriptionState extends State<Product_Description> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 12,
+                          fontSize: 16,
                           fontFamily: 'Poppins2',
                           fontWeight: FontWeight.w400,
                           height: 0,
@@ -370,13 +375,13 @@ class _Product_DescriptionState extends State<Product_Description> {
     for (int i = 0; i < _images.length; i++) {
       indicators.add(
         Container(
-          width: 10,
-          height: 10,
+          width: 15,
+          height: 15,
           margin: const EdgeInsets.symmetric(horizontal: 5),
           decoration: ShapeDecoration(
             shape: OvalBorder(
               side: BorderSide(
-                width: 3,
+                width: 5,
                 color: _currentPage == i
                     ? const Color.fromRGBO(81, 37, 210, 1)
                     : Colors.grey,

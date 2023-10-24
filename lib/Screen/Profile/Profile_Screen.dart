@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:your_cart/Screen/Cart_Page/Cart_Page.dart';
 import 'package:your_cart/Screen/Footer_Menu.dart';
 import 'package:your_cart/Screen/Home.dart';
+import 'package:your_cart/Screen/Login.dart';
 import 'package:your_cart/Screen/Order_Page/Order_Page.dart';
 import 'package:your_cart/Screen/Profile/user_profile.dart';
 import 'package:your_cart/Screen/Wishlist_Page/Wishlist_Page.dart';
@@ -18,6 +20,11 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
 
   @override
   Widget build(BuildContext context) {
+
+    Future<void> _signOut() async {
+  await FirebaseAuth.instance.signOut();
+}
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -31,7 +38,7 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                 color: Color.fromRGBO(81, 37, 210, 1),
               ),
               // color: Colors.blue,
-              padding: const EdgeInsets.only(bottom: 8.0), // Optional padding
+              padding: const EdgeInsets.only(bottom: 25.0), // Optional padding
               child: Column(
                 children: [
                   const SizedBox(
@@ -49,7 +56,7 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                   Padding(
                     padding: EdgeInsets.only(top: 8.0),
                     child: Text(
-                      "James",
+                      "SHIVAM MISHRA",
                       style: TextStyle(
                         fontSize: 30,
                         color: Color.fromARGB(255, 255, 255, 255),
@@ -58,14 +65,16 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                     ),
                   ),
                   Text(
-                    "jimmy23@gmail.com",
+                    "SMISHRA371@RKU.AC.IN",
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontFamily: 'Poppins2',
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 10,)
+                  SizedBox(
+                    height: 10,
+                  )
                 ],
               ),
             ),
@@ -91,10 +100,9 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                         elevation: 1, // Add shadow to the card
                         margin: EdgeInsets.all(8),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              20), // Set the card radius to 14
-                        ), // Add margin around the card
-                        child: ListTile(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const ListTile(
                           leading: Icon(Icons.person,
                               color: Colors.white), // Prefix icon
                           trailing: Icon(Icons.arrow_forward_rounded,
@@ -162,7 +170,7 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                               20), // Set the card radius to 14
                         ),
                         // Add margin around the card
-                        child: ListTile(
+                        child: const ListTile(
                           leading:
                               Icon(Icons.settings_rounded, color: Colors.white),
                           trailing: Icon(Icons.arrow_forward_rounded,
@@ -202,23 +210,27 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
               ),
             ),
             const SizedBox(
-              height: 120,
+              height: 280,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                  height: 50,
-                  width: 372,
+                  height: 60,
+                  width: 400,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _signOut();
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => LoginPage()));
+                    },
                     style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(81, 37, 210, 1),
+                      primary: const Color.fromRGBO(81, 37, 210, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(34),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Logout',
                       style: TextStyle(
                         color: Colors.white,

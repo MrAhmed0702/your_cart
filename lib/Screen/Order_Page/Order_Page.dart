@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:your_cart/Screen/Footer_Menu.dart';
 
 class Order_Screen extends StatefulWidget {
   const Order_Screen({Key? key});
@@ -52,7 +53,13 @@ class _Order_ScreenState extends State<Order_Screen> {
                 ),
                 iconSize: 96,
                 color: const Color.fromARGB(255, 255, 255, 255),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        FooterMenu()));
+                },
               ),
             ),
           ],
@@ -99,7 +106,7 @@ class _Order_ScreenState extends State<Order_Screen> {
                                     height: 100,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                                    padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
                                     child: Column(
                                       // mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,7 +183,7 @@ class _Order_ScreenState extends State<Order_Screen> {
                                     height: 100,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                                    padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
                                     child: Column(
                                       // mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -253,7 +260,7 @@ class _Order_ScreenState extends State<Order_Screen> {
                                     height: 100,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                                    padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
                                     child: Column(
                                       // mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,

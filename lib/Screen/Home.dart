@@ -103,13 +103,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                           iconSize: 96,
                                           color: const Color.fromARGB(
                                               255, 255, 255, 255),
-                                          onPressed: () {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (BuildContext
-                                                            context) =>
-                                                        Profile_User_Screen()));
-                                          },
+                                          onPressed: () {},
                                         ),
                                       ),
                                     ),
@@ -117,7 +111,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 ),
                               ),
                               const SizedBox(width: 2),
-                              const SizedBox(
+                              Container(
                                 width: 132,
                                 height: 20,
                                 child: Text(
@@ -195,10 +189,10 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(24),
                               ),
-                              child: const TextField(
+                              child: TextField(
                                 decoration: InputDecoration(
-                                  contentPadding:
-                                      EdgeInsets.symmetric(horizontal: 16),
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 16),
                                   hintText: 'Search product',
                                   hintStyle:
                                       TextStyle(color: Color(0xFF673EE5)),
@@ -260,126 +254,126 @@ class _Home_ScreenState extends State<Home_Screen> {
                         ),
                       ),
 
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(99, 258, 0, 0),
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Positioned(
-                                  child: CircleAvatar(
-                                    radius: 30,
-                                    backgroundColor:
-                                        const Color.fromRGBO(107, 69, 217, 1),
-                                    child: IconButton(
-                                      icon: SvgPicture.asset(
-                                        'images/mask_icon.svg',
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(115, 258, 0, 0),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Positioned(
+                                    child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor:
+                                          const Color.fromRGBO(107, 69, 217, 1),
+                                      child: IconButton(
+                                        icon: SvgPicture.asset(
+                                          'images/mask_icon.svg',
+                                        ),
+                                        iconSize: 48,
+                                        color: Colors.white,
+                                        onPressed: () {},
                                       ),
-                                      iconSize: 48,
-                                      color: Colors.white,
-                                      onPressed: () {},
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              "Mask",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontFamily: 'Poppins2',
-                                fontWeight: FontWeight.w500,
+                                ],
                               ),
-                            ),
-                          ],
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const Text(
+                                "Mask",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
 
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(172, 258, 0, 0),
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Positioned(
-                                  // left: 30,
-                                  // top: 258,
-                                  child: CircleAvatar(
-                                    radius: 30,
-                                    backgroundColor:
-                                        const Color.fromRGBO(107, 69, 217, 1),
-                                    child: IconButton(
-                                      icon: SvgPicture.asset(
-                                        'images/t-shirt_icon.svg',
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(205, 258, 0, 0),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Positioned(
+                                    // left: 30,
+                                    // top: 258,
+                                    child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor:
+                                          const Color.fromRGBO(107, 69, 217, 1),
+                                      child: IconButton(
+                                        icon: SvgPicture.asset(
+                                          'images/t-shirt_icon.svg',
+                                        ),
+                                        iconSize: 48,
+                                        color: Colors.white,
+                                        onPressed: () {},
                                       ),
-                                      iconSize: 48,
-                                      color: Colors.white,
-                                      onPressed: () {},
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              "T-Shirts",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontFamily: 'Poppins2',
-                                fontWeight: FontWeight.w500,
+                                ],
                               ),
-                            ),
-                          ],
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const Text(
+                                "T-Shirts",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
 
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(245, 258, 0, 0),
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Positioned(
-                                  // left: 30,
-                                  // top: 258,
-                                  child: CircleAvatar(
-                                    radius: 30,
-                                    backgroundColor:
-                                        const Color.fromRGBO(107, 69, 217, 1),
-                                    child: IconButton(
-                                      icon: SvgPicture.asset(
-                                        'images/shirt_icon.svg',
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(295, 258, 0, 0),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Positioned(
+                                    // left: 30,
+                                    // top: 258,
+                                    child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor:
+                                          const Color.fromRGBO(107, 69, 217, 1),
+                                      child: IconButton(
+                                        icon: SvgPicture.asset(
+                                          'images/shirt_icon.svg',
+                                        ),
+                                        iconSize: 48,
+                                        color: Colors.white,
+                                        onPressed: () {},
                                       ),
-                                      iconSize: 48,
-                                      color: Colors.white,
-                                      onPressed: () {},
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              "Shirts",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontFamily: 'Poppins2',
-                                fontWeight: FontWeight.w500,
+                                ],
                               ),
-                            ),
-                          ],
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const Text(
+                                "Shirts",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontFamily: 'Poppins2',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
 
                       Padding(
                         padding: const EdgeInsets.fromLTRB(318, 258, 0, 0),
@@ -460,10 +454,10 @@ class _Home_ScreenState extends State<Home_Screen> {
             SizedBox(
               height: height_c * 1,
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, // Two items in each row
                   childAspectRatio:
-                      0.70, // You can adjust this ratio for the item's height
+                      0.75, // You can adjust this ratio for the item's height
                 ),
                 itemCount: products.length,
                 itemBuilder: (context, index) {
@@ -472,12 +466,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                     child: Column(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.32,
+                          height: MediaQuery.of(context).size.height * 0.28,
                           width: MediaQuery.of(context).size.width * 0.41,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
-                            border: Border.all(
-                                color: const Color(0xFF673EE5), width: 2),
+                            border:
+                                Border.all(color: Color(0xFF673EE5), width: 2),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -488,26 +482,17 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   width: 148,
                                   height: 148,
                                 ),
-                                const SizedBox(height: 0),
-                                TextButton(
-                                  child: Text(
-                                    products[index]["name"],
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontFamily: 'Poppins2',
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  products[index]["name"],
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Poppins2',
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Product_Description()),
-                                    );
-                                  },
                                 ),
                                 const SizedBox(height: 10),
                                 Row(
@@ -516,7 +501,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   children: [
                                     Text(
                                       products[index]['price'],
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         color: Color(0xFF5125D2),
                                         fontSize: 15,
                                         fontFamily: 'Poppins',

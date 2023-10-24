@@ -59,7 +59,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
     double height_c = MediaQuery.of(context).size.height;
     double width_c = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
+         
         children: [
           SingleChildScrollView(
             child: Form(
@@ -256,6 +258,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Checkbox(
                                   checkColor: Color(0xFF5125D2),
@@ -274,7 +277,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                         "I agree to the Terms & Conditions \n and Privacy & Policy ",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 14,
+                                        fontSize: 18,
                                         fontFamily: "Poppins2"))
                               ]))
                             ],
@@ -333,6 +336,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 style: TextStyle(
                                   fontFamily: 'Poppins2',
                                   color: Colors.white,
+                                  fontSize: 16
                                 ),
                               ),
                               InkWell(
@@ -346,6 +350,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   style: TextStyle(
                                     fontFamily: 'Poppins2',
                                     color: Colors.white,
+                                    fontSize: 16,
                                   ),
                                 ),
                               )
