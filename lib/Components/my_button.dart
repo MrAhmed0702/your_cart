@@ -16,7 +16,7 @@ class MyButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(12),
+              Radius.circular(16),
             ),
           ),
           backgroundColor: Colors.white,

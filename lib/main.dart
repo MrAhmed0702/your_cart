@@ -4,6 +4,7 @@ import 'package:your_cart/Screen/Footer_Menu.dart';
 import 'package:your_cart/Screen/ForgetPassword.dart';
 import 'package:your_cart/Screen/Home.dart';
 import 'package:your_cart/Screen/Login.dart';
+import 'package:your_cart/Screen/Product_Description_Page.dart/Product_des_page.dart';
 import 'package:your_cart/Screen/Registration.dart';
 import 'package:your_cart/Screen/Welcome.dart';
 import 'package:your_cart/Screen/splash_screen_0.dart';

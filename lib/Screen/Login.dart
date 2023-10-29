@@ -85,14 +85,14 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Container(
-                    height: height_c * 0.7,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF5125D2),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(22),
-                        topRight: Radius.circular(22),
+                      height: height_c * 0.7,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF5125D2),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(22),
+                          topRight: Radius.circular(22),
+                        ),
                       ),
-                    ),
                     child: SingleChildScrollView(
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(40, 20, 40, 0),
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Text(
                                   'Login here',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 40,
                                     color: Colors.white,
                                     fontFamily: "Poppins2",
                                   ),
@@ -113,12 +113,12 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
                             Text(
                               'Please Enter Your Login Credentials',
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 20,
                                 color: Colors.white,
                                 fontFamily: 'Poppins2',
                               ),
@@ -175,6 +175,7 @@ class _LoginPageState extends State<LoginPage> {
                                     style: TextStyle(
                                       fontFamily: 'Poppins2',
                                       color: Colors.white,
+                                      fontSize: 18
                                     ),
                                   ),
                                 )
@@ -203,6 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                                       style: TextStyle(
                                         fontFamily: 'Poppins2',
                                         color: Colors.white,
+                                        fontSize: 18
                                       ),
                                     ),
                                     InkWell(
@@ -218,6 +220,7 @@ class _LoginPageState extends State<LoginPage> {
                                         style: TextStyle(
                                           fontFamily: 'Poppins2',
                                           color: Colors.white,
+                                          fontSize: 18
                                         ),
                                       ),
                                     )
@@ -230,7 +233,7 @@ class _LoginPageState extends State<LoginPage> {
                                   "Or Login With",
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: 22,
                                     fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -250,11 +253,7 @@ class _LoginPageState extends State<LoginPage> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    CircleAvatar(
-                                      radius: 40,
-                                      backgroundColor: Colors.white,
-                                      child: Image.asset('images/apple.png'),
-                                    ),
+                                    
                                   ],
                                 )
                               ],
