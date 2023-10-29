@@ -32,7 +32,7 @@ class _ClothSizeSelectorState extends State<ClothSizeSelector> {
           value: value,
           child: Text(
             value,
-            style: const TextStyle(
+            style: TextStyle(
               color: Color.fromRGBO(107, 69, 217, 1),
               fontSize: 20,
               fontFamily: 'Poppins',

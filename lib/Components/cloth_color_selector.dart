@@ -1,32 +1,49 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:flutter/material.dart';
 
-// class Color_Selector extends StatefulWidget {
-//   const Color_Selector({super.key});
+class ColorSelector extends StatefulWidget {
+  @override
+  _ColorSelectorState createState() => _ColorSelectorState();
+}
 
-//   @override
-//   State<Color_Selector> createState() => _Color_SelectorState();
-// }
+class _ColorSelectorState extends State<ColorSelector> {
+  Color selectedColor = Colors.blue; // Default selected color
 
-// class _Color_SelectorState extends State<Color_Selector> { 
-// Color currentColor = Colors.amber; 
-// List<Color> currentColors = [Colors.yellow, Colors.green]; 
+  // List of available colors
+  final List<Color> colors = [
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.yellow,
+  ];
 
-// void changeColor(Color color) => setState(() => currentColor = color); 
-
-// @override 
-// Widget build(BuildContext context) { 
-// 	return MaterialApp( 
-// 		debugShowCheckedModeBanner: false, 
-// 		home: Scaffold( 
-// 		appBar: AppBar( 
-// 			title: const Text('GeeksForGeeks'), 
-// 			backgroundColor: currentColor, 
-// 			centerTitle: true, 
-// 		), 
-// 		body: , 
-// 				), 
-// 		), 
-// 		)); 
-// } 
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Text(
+          'Select Cloth Color:',
+          style: TextStyle(fontSize: 18),
+        ),
+        Column(
+          children: colors.map((color) {
+            return RadioListTile<Color>(
+              title: Text(color.toString()), // Display color name
+              value: color, // Color value
+              groupValue: selectedColor, // Current selected color
+              onChanged: (Color? value) {
+                // Update selected color when user taps the radio button
+                setState(() {
+                  selectedColor = value!;
+                });
+              },
+            );
+          }).toList(),
+        ),
+        Text(
+          'Selected Color: $selectedColor',
+          style: TextStyle(fontSize: 16),
+        ),
+      ],
+    );
+  }
+}

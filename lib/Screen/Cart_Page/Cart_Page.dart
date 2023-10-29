@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:your_cart/Screen/Footer_Menu.dart';
+import 'package:your_cart/Screen/Home.dart';
+
+import 'package:your_cart/Screen/Footer_Menu.dart';
 
 
 class Cart_Screen extends StatefulWidget {
@@ -59,6 +62,13 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                                                     (BuildContext context) =>
                                                         FooterMenu()));
                 },
+                onPressed: () {
+                  Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        FooterMenu()));
+                },
               ),
             ),
             const Text(
@@ -79,6 +89,9 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                 ),
                 iconSize: 96,
                 color: const Color.fromARGB(255, 255, 255, 255),
+                onPressed: () {
+                  
+                },
                 onPressed: () {
                   
                 },
@@ -230,6 +243,136 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                           ),
                         ),
                         height: 140,
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Image.asset(
+                                  "images/Product_Page/Synthetic_Mask.png",
+                                  width: 108,
+                                  height: 108,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Synthetics Mask",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontFamily: 'Poppins2',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Size : Free Size",
+                                        style: TextStyle(
+                                          color: Color(0xFFBCC1CD),
+                                          fontSize: 14,
+                                          fontFamily: 'Poppins2',
+                                          fontWeight: FontWeight.w500,
+                                          height: 0,
+                                        ),
+                                      ),
+                                      Text(
+                                        "\u{20B9} 250.0",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontFamily: 'Poppins2',
+                                          fontWeight: FontWeight.w600,
+                                          height: 0,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 29),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      IconButton(
+                                        icon: SvgPicture.asset(
+                                          'images/delete_icon.svg',
+                                          width: 40,
+                                          height: 40,
+                                        ),
+                                        onPressed: () {},
+                                        color: Colors.white,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          SizedBox(
+                                            width: 25,
+                                            height: 25,
+                                            child: FittedBox(
+                                              child: FloatingActionButton(
+                                                onPressed: minus,
+                                                child: Icon(
+                                                  // const IconData(0xe15b,
+                                                  //     fontFamily: 'Poppins2'),
+                                                  Icons.remove,
+                                                  color: Color.fromRGBO(
+                                                      81, 37, 210, 1),
+                                                  size: 40,
+                                                ),
+                                                backgroundColor: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 7.8,
+                                          ),
+                                          Text('$_n',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontFamily: 'Poppins',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0,
+                                              )),
+                                          SizedBox(
+                                            width: 7.8,
+                                          ),
+                                          SizedBox(
+                                            width: 25,
+                                            height: 25,
+                                            child: FittedBox(
+                                              child: FloatingActionButton(
+                                                onPressed: add,
+                                                child: Icon(
+                                                  Icons.add,
+                                                  color: Color.fromRGBO(
+                                                      81, 37, 210, 1),
+                                                  size: 40,
+                                                ),
+                                                backgroundColor: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        height: 140,
+                      ),
+                      SizedBox(
+                        height: 520,
                       ),
                       SizedBox(
                         height: 520,
@@ -291,6 +434,7 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         height: 11,
                       ),
                       Container(
+                        width: width_c * 1,
                         width: width_c * 1,
                         decoration: ShapeDecoration(
                           shape: RoundedRectangleBorder(

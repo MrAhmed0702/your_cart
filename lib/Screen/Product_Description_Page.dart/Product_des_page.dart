@@ -1,12 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, prefer_final_fields
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:your_cart/Components/Cloth_selector.dart';
-import 'package:your_cart/Components/cloth_color_selector.dart';
 import 'package:your_cart/Screen/Footer_Menu.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class Product_Description extends StatefulWidget {
   const Product_Description({super.key});
@@ -18,24 +14,10 @@ class Product_Description extends StatefulWidget {
 class _Product_DescriptionState extends State<Product_Description> {
   PageController _pageController = PageController();
   int _currentPage = 0;
-  Color currentColor = Colors.amber;
-  List<Color> currentColors = [Colors.yellow, Colors.green];
-  int _rate_number = 20;
-  String _Review_words = "Awesome";
 
   List<String> _images = [
     'images/Product_Page/mask_1.png',
     'images/Product_Page/mask_2.png',
-  ];
-
-  Color selectedColor = Colors.blue; // Default selected color
-
-  // List of available colors
-  final List<Color> colors = [
-    Colors.blue,
-    Colors.red,
-    Colors.green,
-    Colors.yellow,
   ];
 
   @override
@@ -66,6 +48,7 @@ class _Product_DescriptionState extends State<Product_Description> {
         if (_n != 0) _n--;
       });
     }
+
 
     return Scaffold(
       appBar: AppBar(
@@ -98,15 +81,18 @@ class _Product_DescriptionState extends State<Product_Description> {
                 iconSize: 96,
                 color: const Color.fromARGB(255, 255, 255, 255),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => FooterMenu()));
+                  Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        FooterMenu()));
                 },
               ),
             ),
           ],
         ),
       ),
-      body: SingleChildScrollView(
+      body: Container(
         child: Column(
           // mainAxisAlignment : MainAxisAlignment.st art,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,6 +210,8 @@ class _Product_DescriptionState extends State<Product_Description> {
                               child: FloatingActionButton(
                                 onPressed: minus,
                                 child: const Icon(
+                                  // const IconData(0xe15b,
+                                  //     fontFamily: 'Poppins2'),
                                   Icons.remove,
                                   color: Color.fromRGBO(255, 255, 255, 1),
                                   size: 40,
@@ -327,16 +315,15 @@ class _Product_DescriptionState extends State<Product_Description> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(17, 20, 0, 0),
+              padding: EdgeInsets.fromLTRB(17, 20, 0, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      const Text(
-                        "Select Size :",
+                      Text(
+                        "Select Size : ",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
@@ -345,9 +332,7 @@ class _Product_DescriptionState extends State<Product_Description> {
                           height: 0,
                         ),
                       ),
-                      const SizedBox(
-                        width: 15,
-                      ),
+                      SizedBox(width: 15,),
                       ClothSizeSelector(),
                     ],
                   ),
@@ -360,242 +345,24 @@ class _Product_DescriptionState extends State<Product_Description> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Select Color :",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontFamily: 'Poppins2',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
-                      )),
-                  SizedBox(
-                    height: 55,
-                    child: SizedBox(
-                      height: 200,
-                      width: 200,
-                      child: Expanded(
-                        child: BlockPicker(
-                            availableColors: [
-                              Colors.red,
-                              Colors.blue,
-                              Colors.purple,
-                              Colors.yellow
-                            ],
-                            pickerColor: currentColor,
-                            onColorChanged: changeColor),
+                  Row(
+                    children: [
+                      Text(
+                        "Select Color : ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Poppins2',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 15,),
+                      // ColorSelector(),
+                    ],
                   ),
                 ],
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(17, 20, 15, 0),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Description :",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Poppins2',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        )),
-                    Text(
-                        "ipsum malesuada est. ex hendrerit tincidunt urna amet, placerat eget non. sit nec placerat In vitae Sed luctus nec ipsum lacus elit lobortis, ac sollicitudin. \n \n Praesent facilisis quis faucibus Cras ipsum venenatis dolor convallis. scelerisque non convallis. ",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Color(0xFF88889D),
-                          fontSize: 16,
-                          fontFamily: 'Poppins2',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        )),
-                  ]),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(17, 20, 15, 0),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Review :",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Poppins2',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        )),
-                    SizedBox(
-                      height: 9,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.star_rate_rounded,
-                          size: 30,
-                          color: Color.fromRGBO(255, 215, 0, 1),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          '$_rate_number',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2',
-                            fontWeight: FontWeight.w600,
-                            height: 0,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          '$_Review_words',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2',
-                            fontWeight: FontWeight.w600,
-                            height: 0,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                        "ipsum malesuada est. ex hendrerit tincidunt urna amet, placerat eget non. ",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Color(0xFF88889D),
-                          fontSize: 15,
-                          fontFamily: 'Poppins2',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        )),
-                    SizedBox(
-                      height: 6,
-                    ),
-                    Text(
-                      'Rahul Jadav',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Poppins2',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
-                      ),
-                    ),
-                    SizedBox(height: 15,),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.star_rate_rounded,
-                          size: 30,
-                          color: Color.fromRGBO(255, 215, 0, 1),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          '$_rate_number',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2',
-                            fontWeight: FontWeight.w600,
-                            height: 0,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          '$_Review_words',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontFamily: 'Poppins2',
-                            fontWeight: FontWeight.w600,
-                            height: 0,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                        "ipsum malesuada est. ex hendrerit tincidunt urna amet, placerat eget non. ",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Color(0xFF88889D),
-                          fontSize: 15,
-                          fontFamily: 'Poppins2',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        )),
-                    SizedBox(
-                      height: 6,
-                    ),
-                    Text(
-                      'Rahul Jadav',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Poppins2',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
-                      ),
-                    ),
-                  ]),
-            ),
-          ],
-        ),
-        
-      ),
-      floatingActionButton: Container(
-        color: Color.fromRGBO(255, 255, 255, 1),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                
-                primary: Color.fromRGBO(238, 234, 251, 1),
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),) ,
-              onPressed: () {
-                // Add your action here
-              },
-              child: Text("Try Now",
-              textAlign: TextAlign.right,
-style: TextStyle(
-color: Color(0xFF5125D2),
-fontSize: 24,
-fontFamily: 'Poppins2',
-fontWeight: FontWeight.w600,
-height: 0,
-),),
-              // backgroundColor: Colors.blue,
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                // Add your action here
-              },
-              child: Icon(Icons.remove),
-              // backgroundColor: Colors.red,
             ),
           ],
         ),
@@ -626,6 +393,4 @@ height: 0,
     }
     return indicators;
   }
-
-  void changeColor(Color color) => setState(() => currentColor = color);
 }
