@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
         .then((value) {
       Navigator.pushReplacementNamed(context, "bottom_navigation_bar");
     }).onError((error, stackTrace) {
-      debugPrint("error");
+      debugPrint("error");  
     });
   }
 

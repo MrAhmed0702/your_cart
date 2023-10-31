@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:your_cart/Components/ProductWidget.dart';
 import 'package:your_cart/Components/ProductWidgetTest.dart';
 import 'package:your_cart/Screen/Profile/Profile_Screen.dart';
+import 'package:your_cart/Screen/Read%20Data/get_user_name.dart';
 // import 'package:your_cart/Screen/Welcome.dart';
 
 class Home_Screen extends StatefulWidget {
@@ -16,6 +18,19 @@ class Home_Screen extends StatefulWidget {
 
 class _Home_ScreenState extends State<Home_Screen> {
   final users = FirebaseAuth.instance.currentUser!;
+
+  List<String> docIDs = [];
+
+  Future getDocId() async {
+    await FirebaseFirestore.instance.collection('users').get().then(
+          (snapshot) => snapshot.docs.forEach(
+            (document) {
+              print(document.reference);
+              docIDs.add(document.reference.id);
+            },
+          ),
+        );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,18 +100,34 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 ),
                               ),
                               const SizedBox(width: 2),
-                              const SizedBox(
+                              SizedBox(
                                 width: 132,
                                 height: 20,
-                                child: Text(
-                                  'Namasta, User',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                    height: 0,
-                                  ),
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      'Namasta, ',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0,
+                                      ),
+                                    ),
+                                    FutureBuilder(
+                                        future: getDocId(),
+                                        builder: (context, snapshot) {
+                                          return ListView.builder(
+                                            itemCount: docIDs.length,
+                                            itemBuilder: (context, index) {
+                                              return ListTile(
+                                                title: GetUserName(DocumentId: docIDs[index]),
+                                              );
+                                            },
+                                          );
+                                        }),
+                                  ],
                                 ),
                               ),
                             ],

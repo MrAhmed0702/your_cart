@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:your_cart/Screen/BNB/Footer_Menu.dart';
 import 'package:your_cart/Screen/Order_Page/Order_Page.dart';
@@ -11,7 +12,7 @@ class Profile_User_Screen extends StatefulWidget {
 }
 
 class _Profile_User_ScreenState extends State<Profile_User_Screen> {
-  // Color color = Color.fromARGB(255, 255, 255, 255);
+  final user = FirebaseAuth.instance.currentUser!;
 
   @override
   Widget build(BuildContext context) {
@@ -179,23 +180,6 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                         ),
                       ),
                     ),
-                    // GestureDetector(
-                    //   onTap: () {
-                    //     // Navigator.push(
-                    //     //   context,
-                    //     //   MaterialPageRoute(builder: (context) => Logout()),
-                    //     // );
-                    //   },
-                    //   child: const Card(
-                    //     elevation: 1,
-                    //     margin: EdgeInsets.all(8),
-                    //     child: ListTile(
-                    //       leading: Icon(Icons.logout_outlined),
-                    //       trailing: Icon(Icons.arrow_forward_rounded),
-                    //       title: Text('Logout'),
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -211,8 +195,13 @@ class _Profile_User_ScreenState extends State<Profile_User_Screen> {
                   width: 372,
                   child: ElevatedButton(
                     onPressed: () {
-                      // FirebaseAuth.instance.signOut();
-                      // Navigator.pushReplacementNamed(context, "LoginPage");
+                      if (FirebaseAuth.instance.currentUser != null) {
+                        // User is signed in
+                        FirebaseAuth.instance.signOut();
+                      } else {
+                        // No user is signed in
+                        print("No user signed in.");
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(81, 37, 210, 1),

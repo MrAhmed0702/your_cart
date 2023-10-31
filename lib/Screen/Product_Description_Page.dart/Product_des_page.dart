@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:your_cart/Components/Cloth_selector.dart';
 
+// ignore: camel_case_types
 class Product_Description extends StatefulWidget {
   const Product_Description({super.key});
 
@@ -10,6 +11,7 @@ class Product_Description extends StatefulWidget {
   State<Product_Description> createState() => _Product_DescriptionState();
 }
 
+// ignore: camel_case_types
 class _Product_DescriptionState extends State<Product_Description> {
   PageController _pageController = PageController();
   int _currentPage = 0;
@@ -89,7 +91,7 @@ class _Product_DescriptionState extends State<Product_Description> {
       ),
       body: Container(
         child: Column(
-          // mainAxisAlignment : MainAxisAlignment.st art,
+          // mainAxisAlignment : MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
